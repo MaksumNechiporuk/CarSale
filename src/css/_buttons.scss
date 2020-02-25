@@ -1,28 +1,93 @@
-.btn--header_login {
-  width: 65px;
-  height: 16px;
-  @include font(22px, $font-light, $standart--color__1, 400);
-  line-height: 24px;
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
-  text-decoration: none;
-  background: url("../img/Login.svg") no-repeat 100%;
-  width: 115px;
-  height: auto;
-  display: inline-block;
+// .btn--header_login {
+//   width: 65px;
+//   height: 16px;
+//   @include font(22px, $font-light, $standart--color__1, 400);
+//   line-height: 24px;
+//   text-transform: uppercase;
+//   letter-spacing: 1.1px;
+//   text-decoration: none;
+//   background: url("../img/Login.svg") no-repeat 100%;
+//   width: 115px;
+//   height: auto;
+//   display: inline-block;
+// }
+
+// .btn--liveChat {
+//     width: 65px;
+//     height: 16px;
+//     @include font(22px, $font-light, $standart--color__1, 400);
+//     line-height: 24px;
+//     text-transform: uppercase;
+//     letter-spacing: 1.1px;
+//     text-decoration: none;
+//     background: url("../img/Chat.svg") no-repeat 100%;
+//     width: 162px;
+//     height: auto;
+//     display: inline-block;
+//   }
+.btn_search
+{
+width: 75px;
+height: 28px;
+background-color: $btn--color-primary_2;
+      @include font(
+      15px,
+      $font-light,
+      $font--color-primary_2,
+      400
+    );
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.btn_account
+{
+width: 163px;
+height: 35px;
+border: 2px solid #a6daff;
+background-color: $btn--color-primary_2;
+      @include font(
+      14px,
+      $font-light,
+      $font--color-primary_2,
+      400
+    );
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn_search:hover
+{
+background-color: $btn--color-primary_2_hover;
 }
 
-.btn--liveChat {
-    width: 65px;
-    height: 16px;
-    @include font(22px, $font-light, $standart--color__1, 400);
-    line-height: 24px;
+.btn_reset
+{
+width: 63px;
+height: 28px;
+background-color: $btn--color-primary_1;
+      @include font(
+      15px,
+      $font-light,
+      $font--color-primary_2,
+      400
+    );
     text-transform: uppercase;
-    letter-spacing: 1.1px;
-    text-decoration: none;
-    background: url("../img/Chat.svg") no-repeat 100%;
-    width: 162px;
-    height: auto;
-    display: inline-block;
-  }
-  
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn_reset:hover
+{
+background-color: $btn--color-primary_1_hover;
+}
+.textMenu {
+    text-align: center;
+         @include font(
+      20px,
+      $font-light,
+      $font--color-primary_2,
+      400
+    );
+    
+    text-transform: uppercase;
+}
