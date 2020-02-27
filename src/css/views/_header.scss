@@ -1,5 +1,23 @@
-header{
-    h1{
-        color: green;
-    }
+.navbar-menu {
+  background-color: $bgc--color-primary_2;
+  .home-icon {
+    color: $btn--color-primary_1;
+  }
+  .nav-item {
+    color: $font--color-primary_2;
+    font-family: $font-sansbold;
+    padding: 0px 5px;
+    border-left: 1px solid white;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 1px;
+  }
+  a {
+    text-decoration: none;
+  }
 }
