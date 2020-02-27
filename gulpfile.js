@@ -8,34 +8,35 @@ var config = {
 };
 
 const path = {
-    dist: {
-        html: 'dist/',
-        js: 'dist/js/',
-        jsmain: 'dist/js',
-        css: 'dist/css/',
-        img: 'dist/img/',
-        fonts: 'dist/fonts/'
-    },
-    src: {
-        html: 'src/*.html',
-        js: 'src/js/*.js',
-        jsmain: 'src/js/main.js',
-        scss: 'src/css/main.scss',
-        css: 'src/css/*.css',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
-    },
-    watch: {
-        html: 'src/*.html',
-        htmlTemplate: 'src/template/*.html',
-        js: 'src/js/*.js',
-        jsmain: 'src/js/main.js',
-        scss: 'src/css/**/*.scss',
-        css: 'src/css/styles/*.scss',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
-    },
-    clean: './dist/'
+  dist: {
+    html: "dist/",
+    js: "dist/js/",
+    jsmain: "dist/js",
+    css: "dist/css/",
+    img: "dist/img/",
+    fonts: "dist/fonts/"
+  },
+  src: {
+    html: "src/*.html",
+    js: "src/js/*.js",
+    jsmain: "src/js/main.js",
+    scss: "src/css/main.scss",
+    css: "src/css/*.css",
+    img: "src/img/**/*.*",
+    fonts: "src/fonts/**/*.*"
+  },
+  watch: {
+    html: "src/*.html",
+    htmlTemplate: "src/template/*.html",
+    htmlTemplate: "src/template/**/*.html",
+    js: "src/js/*.js",
+    jsmain: "src/js/main.js",
+    scss: "src/css/**/*.scss",
+    css: "src/css/styles/*.scss",
+    img: "src/img/**/*.*",
+    fonts: "src/fonts/**/*.*"
+  },
+  clean: "./dist/"
 };
 
 const gulp = require('gulp')
