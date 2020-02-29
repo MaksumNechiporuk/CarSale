@@ -1,12 +1,13 @@
 .top--part {
   background-color: $bgc--color-primary_2;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 300px;
 }
-.top-footer-font-1 {
+.top-footer-font-1 {  
   color: $font--color-primary_2;
 }
-.phone-photo {
-  color: $btn--color-primary_1;
-}
-.tools-photo {
+.photo {
+  padding-left: 50px;
   color: $btn--color-primary_1;
 }
