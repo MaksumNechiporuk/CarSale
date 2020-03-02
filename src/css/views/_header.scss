@@ -2,6 +2,9 @@
   background-color: $bgc--color-primary_2;
   .home-icon {
     color: $btn--color-primary_1;
+    a {
+      text-decoration: none;
+    }
   }
   .nav-item {
     color: $font--color-primary_2;
@@ -20,4 +23,17 @@
   a {
     text-decoration: none;
   }
+}
+
+.header-search {
+  background-image:  url(../../img/header_background_car.svg) ,url(../../img/Head_background.svg);
+  background-position: top 100px  left 300px,
+  left,
+  right;
+  background-repeat: no-repeat;
+  width: 100%;
+/*   height: 490px; */
+  height: 418px;
+  /* background-size: cover; */
+
 }
