@@ -1,0 +1,24 @@
+.about {
+  display: inline-block;
+  background-color: $bgc--color-primary_2;
+  text-align: justify;
+
+  h2{
+        color: $font--color-primary_2;
+
+  }
+  p {
+    color: $font--color-primary_4;
+  }
+  .text {
+    display: inline-block;
+  }
+  .carImg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/4-layers.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
