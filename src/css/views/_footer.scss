@@ -1,13 +1,19 @@
+.wrapper {
+  p h4 {
+    display: inline-block;
+    @include font(18px, $font-sansbold, $font--color-primary_2, 400);
+  }
+}
 .top--part {
   background-color: $bgc--color-primary_2;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 300px;
 }
-.top-footer-font-1 {  
+.top-footer-font-1 {
+  display: inline-block;
   color: $font--color-primary_2;
+  margin: 0px;
+  text-align: center;
 }
 .photo {
-  padding-left: 50px;
+  margin-top: 20px;
   color: $btn--color-primary_1;
 }
