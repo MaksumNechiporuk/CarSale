@@ -39,12 +39,35 @@
     height: 484px;
   }
   .header-text {
-    @include font(21px, $font-sansbold, $font--color-primary_3, 100);
+    @include font(24px, $font-sansbold, $font--color-primary_3, 100);
     text-transform: uppercase;
+    padding: 20px 0;
   }
   h2 {
     margin: 0px;
     text-align: center;
     padding-top: 20px;
+  }
+  .pre-owned-form {
+    display: inline-block;
+  }
+  .select-group {
+    text-align: justify;
+    padding: 0 25px;
+  }
+  .select-item {
+    width: 45%;
+    margin: 10px 0;
+    border-radius: 5px;
+    height: 25px;
+    font-family: $font-sanssemibold;
+    color: $font--color-primary_1;
+  }
+  .option-item {
+  }
+  .buttons-group {
+    position: relative;
+    display: flex;
+    top: 130px;
   }
 }
