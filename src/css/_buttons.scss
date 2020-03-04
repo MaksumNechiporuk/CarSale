@@ -66,25 +66,41 @@
 }
 .btn_buy-car {
   text-transform: uppercase;
+  display: grid;
+  text-align: center;
   cursor: pointer;
   width: 50%;
   height: 100px;
   border: 0px;
+  font-family: $font-sansbold;
+  color: $font--color-primary_2;
   background-color: $btn--color-primary_2;
+}
+.btn_buy-car:hover{
+  background-color: $btn--color-primary_3_hover;
 }
 .btn_buy-car-image {
   /* color: $bgc--color-primary_5; */
+  margin-left: 50px;
 }
 .btn_sell-car {
   text-transform: uppercase;
+  display: grid;
+  text-align: center;
   cursor: pointer;
   width: 50%;
   height: 100px;
   border: 0px;
+  font-family: $font-sansbold;
+  color: $font--color-primary_2;
   background-color: $btn--color-primary_2;
+}
+.btn_sell-car:hover{
+  background-color: $btn--color-primary_3_hover;
 }
 .btn_sell-car-image {
   /* color: $bgc--color-primary_5; */
+  margin-left: 64px;
 }
 .textMenu {
   text-align: center;
