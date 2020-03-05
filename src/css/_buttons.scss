@@ -47,14 +47,22 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .btn_account {
+    font-size: 10px;
+    height: 25px;
+    width: 120px;
+  }
+}
 .btn_search:hover {
-  background-color: $btn--color-primary_2_hover;
+  background-color: $btn--color-primary_5_hover;
 }
 
 .btn_reset {
   width: 57px;
   height: 28px;
-  background-color: $btn--color-primary_1;
+  background-color: $btn--color-primary_2;
   @include font(15px, $font-sansbold, $font--color-primary_2, 400);
   text-transform: uppercase;
   border-radius: 5px;
@@ -62,7 +70,7 @@
   border: 0px;
 }
 .btn_reset:hover {
-  background-color: $btn--color-primary_1_hover;
+  background-color: $btn--color-primary_5_hover;
 }
 .btn_buy-car {
   text-transform: uppercase;
@@ -76,8 +84,8 @@
   color: $font--color-primary_2;
   background-color: $btn--color-primary_2;
 }
-.btn_buy-car:hover{
-  background-color: $btn--color-primary_3_hover;
+.btn_buy-car:hover {
+  background-color: $btn--color-primary_4_hover;
 }
 .btn_buy-car-image {
   /* color: $bgc--color-primary_5; */
@@ -95,8 +103,8 @@
   color: $font--color-primary_2;
   background-color: $btn--color-primary_2;
 }
-.btn_sell-car:hover{
-  background-color: $btn--color-primary_3_hover;
+.btn_sell-car:hover {
+  background-color: $btn--color-primary_4_hover;
 }
 .btn_sell-car-image {
   /* color: $bgc--color-primary_5; */

@@ -1,17 +1,28 @@
 .navbar-menu {
   background-color: $bgc--color-primary_2;
+
   .home-icon {
     color: $btn--color-primary_1;
     a {
       text-decoration: none;
     }
   }
+  .navbar-pc {
+    margin: 10px;
+  }
   .nav-item {
-    color: $font--color-primary_2;
-    font-family: $font-sansbold;
+    @include font(16px, $font-sansbold, $font--color-primary_2, 100);
     text-transform: uppercase;
     padding: 0px 9px;
     border-left: 1px solid white;
+  }
+  @media screen and (max-width: 1200px) {
+    .nav-item {
+      @include font(12px, $font-sansbold, $font--color-primary_2, 100);
+    }
+    .home-icon {
+      font-size: 12px;
+    }
   }
   ul {
     list-style: none;
@@ -24,6 +35,99 @@
   }
   a {
     text-decoration: none;
+  }
+}
+// @media screen and (max-width: 992px) {
+//   .navbar-pc {
+//     visibility: hidden;
+//   }
+//   .phone-burger {
+//     visibility: visible;
+//   }
+// }
+.phone-burger {
+  /*   visibility: hidden; */
+  width: 100%;
+  height: 50px;
+  * {
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    padding: 50px;
+  }
+  .wrap {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .menu-burger {
+    width: 50px;
+    height: 50px;
+    padding: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    .burger-span {
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      position: relative;
+      top: 2px;
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+      }
+      &:after {
+        top: 20px;
+      }
+    }
+  }
+  ///////////////////////
+  //////////////////////
+  /////////////////////menu
+  .menu {
+    width: 200px;
+    min-height: 0px;
+    //outline:1px solid pink;
+    ul {
+      list-style: none;
+      //margin-top: 0px;
+      li {
+        font-size: 0;
+        //padding: 10px 10px;
+        background: $bgc--color-primary_5;
+        cursor: pointer;
+      }
+    }
+  }
+  //--------------------------------
+  .menu-open {
+    width: 200px;
+    //height: 190px;
+    //outline:1px solid pink;
+    ul {
+      height: 0px;
+      list-style: none;
+      //margin-top: 0px;
+      li {
+        font-size: 16px;
+        padding: 10px 10px;
+        background: $bgc--color-primary_5;
+        cursor: pointer;
+        &:hover {
+          background: $btn--color-primary_5_hover;
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
