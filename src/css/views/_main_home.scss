@@ -20,7 +20,7 @@ body {
         background: $information--color;
         text-align: center;
         border-radius: 30px 30px 30px 30px; 
-        color: #000;
+        color: $font--color-primary_2;
         padding: 5px 10px;
         font-size: 14px;
 
@@ -60,10 +60,10 @@ body {
 }
 
 #ads .card-detail-badge {      
-        background: #f2d900;
+        background: $information--color;
         text-align: center;
         border-radius: 30px 30px 30px 30px;
-        color: #000;
+        color: $font--color-primary_2;
         padding: 5px 10px;
         font-size: 14px;        
     }
