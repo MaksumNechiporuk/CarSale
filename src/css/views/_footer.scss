@@ -1,0 +1,132 @@
+// top part
+.footer {
+  .wrapper {
+    display: inline-block;
+    box-sizing: border-box;
+    p h4 {
+      @include font(18px, $font-sansbold, $font--color-primary_2, 400);
+    }
+    
+  }
+  h4 {
+    padding-left: 40px;
+    @media screen and  (max-width: 992px){
+      @include font(14px, $font-sansbold, $font--color-primary_2, 400);
+      padding-left: 0px;
+  }
+}
+  .first-p {
+    padding-left: 13px;
+  }
+  .p-schedule{
+    display: inline-block;
+    color: $font--color-primary_2;
+    margin: 0px;
+    padding-left: 40px; 
+    @media screen and  (max-width: 992px){
+      @include font(13px, $font-sansbold, $font--color-primary_2, 400);
+      padding-left: 5px;
+  }
+}
+  .top--part {
+    padding: 10px;
+    text-align: center;
+    background-color: $bgc--color-primary_2;
+  }
+  .top-footer-font-1 {
+    display: inline-block;
+    color: $font--color-primary_2;
+    margin: 0px;
+    @media screen and  (max-width: 992px){
+        @include font(14px, $font-sansbold, $font--color-primary_2, 400);
+    }
+  }
+  .photo {
+    color: $btn--color-primary_1;
+  }
+  .photo-phone {
+    position: relative;
+    right: 2px;
+    @media screen and  (max-width: 992px){
+      top: 17px;
+      margin-left: -10px;
+  }
+    @media screen and  (max-width: 767px){
+      right: -8px;
+      top: 10px;
+      margin-left: -10px;
+  }
+}
+  .photo-wrench {
+    position: relative;
+    right: 2px;
+    @media screen and  (max-width: 992px){
+      top: 17px;
+      margin-left: -16px;
+  }
+  @media screen and  (max-width: 767px){
+    top: 10px;
+    margin-left: -16px;
+ }
+}
+.photo-cogs{
+  position: relative;
+  right: 2px;
+  @media screen and  (max-width: 992px){
+    top: 17px;
+    margin-left: -8px;
+ }
+ @media screen and  (max-width: 767px){
+  top: 10px;
+  margin-left: -8px;
+}
+}
+.photo-square{
+  position: relative;
+  right: 2px;
+  @media screen and  (max-width: 992px){
+    top: 17px;
+    margin-left: -26px;
+ }
+ @media screen and  (max-width: 767px){
+   top: 10px;
+  margin-left: -26px;
+}
+}
+  i {
+    position: relative;
+    top: 23px;
+    right: 10px;
+  }
+
+  // bot part
+
+  .bot--part {
+    padding: 10px;
+    background-color: $bgc--color-primary_5;
+  }
+
+  .bot-footer-font-1 {
+    color: $font--color-primary_1;
+    margin: 0px;
+  }
+
+  .bot-footer-font-2 {
+    display: inline-block;
+    color: $font--color-primary_1;
+    margin: 0px;
+    border-left: 1px solid $font--color-primary_1;
+    padding-left: 4px;
+    
+  }
+
+  .photo-face {
+    position: relative;
+    left: 4px;
+    top: 0px;
+  }
+  .wrapper_b{
+    align-content: center;
+    text-align: center;
+  }
+}
