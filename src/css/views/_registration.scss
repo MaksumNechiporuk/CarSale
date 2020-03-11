@@ -1,0 +1,25 @@
+.register-part{
+    padding: 10px;
+    text-align: center;
+}
+
+.wrapper_r{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+h1{
+text-align: center;
+@media screen and  (max-width: 992px){
+  @include font(14px, $font-sansbold, $font--color-primary_1, 400);
+  padding-left: 0px;
+  } 
+}
+input{
+    width: 45%;
+    margin: 10px 0;
+    border-radius: 5px;
+    height: 25px;
+    font-family: open_sanssemibold;
+    color: #9a9a9a;
+}
