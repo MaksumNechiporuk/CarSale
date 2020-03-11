@@ -38,7 +38,8 @@ namespace CarSale.Controllers
             {
                 var user = new AppUser
                 {
-                    UserName = model.Email,
+                    Name = model.Name,
+                    Surname = model.Surname,
                     Email = model.Email,
                     City = model.City,
                     Country = model.Country,

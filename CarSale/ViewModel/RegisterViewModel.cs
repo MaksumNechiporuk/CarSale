@@ -8,6 +8,16 @@ namespace CarSale.ViewModel
     public class RegisterViewModel
     {
         [Required]
+        [RegularExpression("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")]
+        //[StringLength(18, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
+        public string Name { get; set; }
+
+        [Required]
+        [RegularExpression("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")]
+        //[StringLength(18, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
+        public string Surname { get; set; }
+
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
 
