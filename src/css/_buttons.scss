@@ -49,6 +49,35 @@
   cursor: pointer;
 }
 
+.btn_login {
+  margin-top: 7px;
+  margin-right: 3px;
+  border: 2px solid #a6daff;
+  float: right;
+  background-color: $btn--color-primary_2;
+  @include font(14px, $font-sansbold, $font--color-primary_2, 400);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn_login:hover {
+  background-color: $btn--color-primary_5_hover;
+}
+
+.btn_register {
+  margin-top: 7px;
+  border: 2px solid #a6daff;
+  float: right;
+  background-color: $btn--color-primary_2;
+  @include font(14px, $font-sansbold, $font--color-primary_2, 400);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn_register:hover {
+  background-color: $btn--color-primary_5_hover;
+}
+
 .btn_search:hover {
   background-color: $btn--color-primary_5_hover;
 }
@@ -74,6 +103,14 @@
     font-size: 12px;
   }
   .btn_reset {
+    font-size: 12px;
+  }
+  .btn_login {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  .btn_register {
+    margin-top: 4px;
     font-size: 12px;
   }
 }
