@@ -58,5 +58,40 @@ namespace CarSale.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await signInManager.PasswordSignInAsync(
+                    model.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid login attempt");
+            }
+
+            return View(model);
+        }
+
     }
 }

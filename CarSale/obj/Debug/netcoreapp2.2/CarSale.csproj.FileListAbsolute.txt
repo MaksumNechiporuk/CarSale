@@ -60,3 +60,4 @@ C:\Users\dell\Desktop\CarSale\CarSale\obj\Debug\netcoreapp2.2\CarSale.pdb
 C:\Users\dell\Desktop\CarSale\CarSale\obj\Debug\netcoreapp2.2\CarSale.csproj.CopyComplete
 C:\Users\dell\Desktop\CarSale\CarSale\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
 D:\Study\Team\CarSale\CarSale\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\dell\Desktop\CarSale\CarSale\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs

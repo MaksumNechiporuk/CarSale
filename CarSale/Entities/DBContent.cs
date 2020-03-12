@@ -14,10 +14,6 @@ namespace CarSale.Entities
         {
 
         }
-        public DBContent()
-        {
-
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
