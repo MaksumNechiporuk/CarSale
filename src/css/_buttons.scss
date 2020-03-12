@@ -26,7 +26,7 @@
 //     display: inline-block;
 //   }
 .btn_search {
-  width: 24%;
+  width: auto;
   height: 28px;
   background-color: $btn--color-primary_2;
   @include font(15px, $font-sansbold, $font--color-primary_2, 400);
@@ -83,7 +83,7 @@
 }
 
 .btn_reset {
-  width: 19%;
+  width: auto;
   height: 28px;
   text-align: center;
   background-color: $btn--color-primary_2;
@@ -148,8 +148,7 @@
   background-color: $btn--color-primary_4_hover;
 }
 .btn_buy-car-image {
-  /* color: $bgc--color-primary_5; */
-  margin-left: 50px;
+  margin: auto;
 }
 .btn_sell-car {
   text-transform: uppercase;
@@ -167,34 +166,8 @@
   background-color: $btn--color-primary_4_hover;
 }
 .btn_sell-car-image {
-  /* color: $bgc--color-primary_5; */
-  margin-left: 64px;
+  margin: auto;
 }
-@media screen and (max-width: 1200px) {
-  .btn_buy-car-image {
-    margin-left: 34px;
-  }
-  .btn_sell-car-image {
-    margin-left: 49px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .btn_buy-car-image {
-    margin-left: 29px;
-  }
-  .btn_sell-car-image {
-    margin-left: 45px;
-  }
-}
-@media screen and (max-width: 770px) {
-  .btn_buy-car-image {
-    margin-left: 88px;
-  }
-  .btn_sell-car-image {
-    margin-left: 104px;
-  }
-}
-
 .textMenu {
   text-align: center;
   @include font(20px, $font-sansbold, $font--color-primary_2, 400);
