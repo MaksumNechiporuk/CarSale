@@ -1,3 +1,4 @@
+@import 'views/portfolio';
 @import '../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
 @import 'variables';
@@ -8,8 +9,11 @@
 @import 'settings';
 @import 'buttons';
 
+
 @import 'views/header';
 @import 'views/footer';
+
+
 
 @import 'views/main_home';
 @import 'views/about';
