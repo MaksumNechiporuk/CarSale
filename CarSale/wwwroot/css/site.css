@@ -5195,6 +5195,19 @@ ul {
     list-style: none
 }
 
+<<<<<<< HEAD
+=======
+form {
+    display: inline-block;
+    background-color: #333434
+}
+
+input {
+    position: absolute;
+    background: #fff
+}
+
+>>>>>>> back_end
 .btn_search {
     width: auto;
     height: 28px;
