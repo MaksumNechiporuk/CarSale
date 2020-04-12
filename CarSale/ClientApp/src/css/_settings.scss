@@ -1,0 +1,67 @@
+body{
+  margin: 0;
+          background-color: $bgc--color-primary_3;
+
+}
+h1 {
+  @include font(
+    32px,
+    $font-sansbold,
+    $font--color-primary_1,
+    900
+  );
+}
+h2 {
+  @include font(
+    28px,
+    $font-sansbold,
+    $font--color-primary_1,
+    600
+  );
+}
+h3 {
+  @include font(
+    22px,
+   $font-sansbold,
+    $font--color-primary_1,
+    500
+  );
+}
+h4 {
+  @include font(
+    18px,
+   $font-sansbold,
+    $font--color-primary_1,
+    400
+  );
+}
+h5 {
+  @include font(
+    16px,
+   $font-sansbold_italic,
+   $font--color-primary_1,
+    200
+  );
+}
+h6 {
+  font-size: 18px;
+  @include font(
+    14px,
+    $font-sansbold,
+    $font--color-primary_1,
+    100
+  );
+}
+p {
+  @include font(
+    14px,
+    $font-sansbold,
+    $font--color-primary_1,
+    100
+  );
+}
+
+ul {
+list-style: none;
+}
+
