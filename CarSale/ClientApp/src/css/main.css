@@ -461,25 +461,25 @@ textarea.form-control {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"].form-control,
   input[type="time"].form-control,
-  input[type="datetime-local"].form-control,
+  input[type="string-local"].form-control,
   input[type="month"].form-control {
     line-height: 34px; }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
-  input[type="datetime-local"].input-sm,
+  input[type="string-local"].input-sm,
   input[type="month"].input-sm,
   .input-group-sm input[type="date"],
   .input-group-sm input[type="time"],
-  .input-group-sm input[type="datetime-local"],
+  .input-group-sm input[type="string-local"],
   .input-group-sm input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg,
   input[type="time"].input-lg,
-  input[type="datetime-local"].input-lg,
+  input[type="string-local"].input-lg,
   input[type="month"].input-lg,
   .input-group-lg input[type="date"],
   .input-group-lg input[type="time"],
-  .input-group-lg input[type="datetime-local"],
+  .input-group-lg input[type="string-local"],
   .input-group-lg input[type="month"] {
     line-height: 46px; } }
 
@@ -3589,7 +3589,8 @@ ul {
   border: 0px;
   cursor: pointer;
   text-align: center;
-  margin-left: 8%; }
+  margin-left: 8%;
+  margin-top: 7px; }
 
 .btn_account {
   width: 163px;
@@ -3603,6 +3604,9 @@ ul {
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer; }
+
+.btn_account:hover {
+  background-color: #4298d5; }
 
 .btn_login {
   margin-top: 7px;
@@ -3650,7 +3654,8 @@ ul {
   text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
-  border: 0px; }
+  border: 0px;
+  margin-top: 7px; }
 
 @media screen and (max-width: 1200px) {
   .btn_account {
@@ -3677,7 +3682,9 @@ ul {
 
 @media screen and (max-width: 770px) {
   .btn_search {
-    margin-left: 9%; } }
+    width: 102px; }
+  .btn_reset {
+    width: 92px; } }
 
 .btn_reset:hover {
   background-color: #4298d5; }
@@ -3824,6 +3831,8 @@ ul {
     color: #4298d5; }
     .navbar-menu .home-icon a {
       text-decoration: none; }
+  .navbar-menu .row {
+    flex-flow: column; }
   .navbar-menu .navbar-pc {
     margin: 10px; }
   .navbar-menu .nav-item {
@@ -3949,11 +3958,11 @@ ul {
     margin: 0px;
     text-align: center;
     padding-top: 20px; }
-  .header-search .pre-owned-form {
-    display: inline-block; }
   .header-search .select-group {
-    text-align: justify;
-    padding: 0 25px; }
+    padding: 0 25px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between; }
   .header-search .select-item {
     width: 45%;
     margin: 10px 0;
@@ -4139,7 +4148,8 @@ body {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: .25rem;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  cursor: pointer; }
 
 #ads .card-detail-badge {
   background: #4298d5;
@@ -4204,20 +4214,63 @@ body {
     background-repeat: no-repeat;
     background-position: center; }
 
-h1 {
-  text-align: center;
-  color: #4298d5; }
+body {
+  font-family: calibri;
+  padding: 0;
+  margin: 0; }
 
-.btn-primary {
-  width: auto;
-  height: 28px;
-  background-color: #4298d5;
+.loginBox {
+  margin: 1% auto 0% auto;
+  padding: 5px 60px 20px 60px;
+  width: 40%;
+  height: 50%;
+  box-sizing: border-box;
+  background: #0f5b91; }
+
+h2 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  color: #a4d8fd; }
+
+.loginBox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #fff; }
+
+.loginBox input {
+  width: 100%;
+  height: 20px;
+  margin: 0 0 20px 0; }
+
+.loginBox input[type="text"],
+.loginBox input[type="password"],
+.loginBox input[type="email"],
+.loginBox input[type="date"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
   color: #fff;
-  font-size: 15px;
-  font-family: open_sansbold;
-  font-weight: 400;
-  text-transform: uppercase;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
+  font-size: 14px;
   text-align: center; }
+
+::placeholder {
+  color: white;
+  opacity: 0.1;
+  text-align: center; }
+
+.loginBox input[type="submit"] {
+  border: 1px solid;
+  height: 40px;
+  color: #a4d8fd;
+  background-color: transparent; }
+
+.loginBox input[type="submit"]:hover {
+  color: pink;
+  border: 2px solid; }
+
+form a {
+  color: #a4d8fd;
+  text-decoration: none; }

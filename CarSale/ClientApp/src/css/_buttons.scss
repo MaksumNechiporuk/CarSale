@@ -26,17 +26,18 @@
 //     display: inline-block;
 //   }
 .btn_search {
-  width: auto;
-  height: 28px;
-  background-color: $btn--color-primary_2;
-  @include font(15px, $font-sansbold, $font--color-primary_2, 400);
-  text-transform: uppercase;
-  text-align: center;
-  border-radius: 5px;
-  border: 0px;
-  cursor: pointer;
-  text-align: center;
-  margin-left: 8%;
+    width: auto;
+    height: 28px;
+    background-color: $btn--color-primary_2;
+    @include font(15px, $font-sansbold, $font--color-primary_2, 400);
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 8%;
+    margin-top: 7px;
 }
 .btn_account {
   width: 163px;
@@ -49,15 +50,19 @@
   cursor: pointer;
 }
 
+.btn_account:hover {
+    background-color: $btn--color-primary_5_hover;
+}
+
 .btn_login {
-  margin-top: 7px;
-  margin-right: 3px;
-  border: 2px solid #a6daff;
-  float: right;
-  background-color: $btn--color-primary_2;
-  @include font(14px, $font-sansbold, $font--color-primary_2, 400);
-  text-transform: uppercase;
-  cursor: pointer;
+    margin-top: 7px;
+    margin-right: 3px;
+    border: 2px solid #a6daff;
+    float: right;
+    background-color: $btn--color-primary_2;
+    @include font(14px, $font-sansbold, $font--color-primary_2, 400);
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn_login:hover {
@@ -92,6 +97,7 @@
   border-radius: 5px;
   cursor: pointer;
   border: 0px;
+  margin-top: 7px;
 }
 @media screen and (max-width: 1200px) {
   .btn_account {
@@ -125,7 +131,10 @@
 }
 @media screen and (max-width: 770px) {
   .btn_search {
-    margin-left: 9%;
+      width:102px;
+  }
+  .btn_reset {
+      width: 92px;
   }
 }
 

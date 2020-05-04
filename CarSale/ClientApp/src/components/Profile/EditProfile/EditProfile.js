@@ -8,7 +8,6 @@ class EditProfile extends Component {
 				<hr />
 				<div className="container">
 					<form
-						enctype="multipart/form-data"
 						className="form"
 
 						method="post"
@@ -121,12 +120,12 @@ class EditProfile extends Component {
 										>
 											<i className="fa fa-floppy-o" aria-hidden="true"></i>
 
-                Save
-                              </button>
+			             Save
+			                           </button>
 										<button className="btn_Reset" type="reset">
 											<i className="fa fa-refresh" aria-hidden="true"></i>
-    Reset
-              </button>
+			 Reset
+			           </button>
 									</div>
 								</div>
 							</div>

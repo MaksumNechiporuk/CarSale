@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,28 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\151m2fas\151m2fas.jpg" />
+    <Content Remove="wwwroot\images\152m2fas\152m2fas.jpg" />
+    <Content Remove="wwwroot\images\154m2fas\154m2fas.jpg" />
+    <Content Remove="wwwroot\images\154muv2f\154muv2f.jpg" />
+    <Content Remove="wwwroot\images\Новая папка\151m2fas\151m2fas.jpg" />
+    <Content Remove="wwwroot\images\Новая папка\152m2fas\152m2fas.jpg" />
+    <Content Remove="wwwroot\images\Новая папка\154m2fas\154m2fas.jpg" />
+    <Content Remove="wwwroot\images\Новая папка\154muv2f\154muv2f.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\151m2fas\151m2fas.jpg" />
+    <None Include="wwwroot\images\152m2fas\152m2fas.jpg" />
+    <None Include="wwwroot\images\154m2fas\154m2fas.jpg" />
+    <None Include="wwwroot\images\154muv2f\154muv2f.jpg" />
+    <None Include="wwwroot\images\Новая папка\151m2fas\151m2fas.jpg" />
+    <None Include="wwwroot\images\Новая папка\152m2fas\152m2fas.jpg" />
+    <None Include="wwwroot\images\Новая папка\154m2fas\154m2fas.jpg" />
+    <None Include="wwwroot\images\Новая папка\154muv2f\154muv2f.jpg" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
