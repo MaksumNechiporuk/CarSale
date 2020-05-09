@@ -7,12 +7,15 @@
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>f600c28b-a335-45f7-b6af-2a320ebbbfb2</UserSecretsId>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 
@@ -21,28 +24,6 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\images\151m2fas\151m2fas.jpg" />
-    <Content Remove="wwwroot\images\152m2fas\152m2fas.jpg" />
-    <Content Remove="wwwroot\images\154m2fas\154m2fas.jpg" />
-    <Content Remove="wwwroot\images\154muv2f\154muv2f.jpg" />
-    <Content Remove="wwwroot\images\Новая папка\151m2fas\151m2fas.jpg" />
-    <Content Remove="wwwroot\images\Новая папка\152m2fas\152m2fas.jpg" />
-    <Content Remove="wwwroot\images\Новая папка\154m2fas\154m2fas.jpg" />
-    <Content Remove="wwwroot\images\Новая папка\154muv2f\154muv2f.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\images\151m2fas\151m2fas.jpg" />
-    <None Include="wwwroot\images\152m2fas\152m2fas.jpg" />
-    <None Include="wwwroot\images\154m2fas\154m2fas.jpg" />
-    <None Include="wwwroot\images\154muv2f\154muv2f.jpg" />
-    <None Include="wwwroot\images\Новая папка\151m2fas\151m2fas.jpg" />
-    <None Include="wwwroot\images\Новая папка\152m2fas\152m2fas.jpg" />
-    <None Include="wwwroot\images\Новая папка\154m2fas\154m2fas.jpg" />
-    <None Include="wwwroot\images\Новая папка\154muv2f\154muv2f.jpg" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
@@ -59,6 +40,7 @@
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
     <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
     <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>

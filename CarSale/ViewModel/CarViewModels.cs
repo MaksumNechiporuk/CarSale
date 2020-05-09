@@ -52,7 +52,7 @@ namespace CarSale.ViewModels
     {
         public int Id { get; set; }
         public string Date { get; set; }
-        public string Image { get; set; }
+        public List<string> Image { get; set; }
         public decimal Price { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }

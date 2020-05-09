@@ -23,6 +23,13 @@ body {
     font-size: 14px;
 }
 
+.unlinkCar {
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    width: auto;
+    height: auto;
+}
+
 #ads .card-notify-year {
     position: absolute;
     right: -10px;
@@ -95,4 +102,17 @@ body {
     margin: 0;
     padding: 0px;
     padding-top: 10px;
+}
+
+.pageLink {
+    margin: 2px;
+    display: inline-block;
+    padding: 2px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.containerPage {
+    color: red;
 }

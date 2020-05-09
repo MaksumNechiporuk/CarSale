@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { Fragment } from 'react';
 
 const CarItem = (props) => {
 	let { name, state, year, img, price, mileage } = props;
@@ -6,10 +6,11 @@ const CarItem = (props) => {
 		style: 'currency',
 		currency: 'USD',
 	});
-	price = formatter.format(price); /* $2,500.00 */
+	price = formatter.format(price);
 
 	return (
-		<div className="col-xl-4 col-sm-12 col-md-6 ">
+
+		<Fragment >
 			<div className="card rounded">
 				<div className="card-image">
 					<span className="card-notify-year">{year}</span>
@@ -27,7 +28,8 @@ const CarItem = (props) => {
 
 				</div>
 			</div>
-		</div>);
+		</Fragment>
+	);
 
 }
 

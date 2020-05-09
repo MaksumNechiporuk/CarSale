@@ -1,6 +1,7 @@
+
 @import 'views/_portfolio.scss';
 @import 'views/bootstrap/scss/_bootstrap-grid.scss';
-
+@import 'views/_pagination.scss';
 @import '_variables.scss';
 
 @import 'fonts';
@@ -12,12 +13,11 @@
 
 @import 'views/_header.scss';
 @import 'views/_footer.scss';
+@import 'views/_not_found.scss';
 
 
 
 @import 'views/_main_home.scss';
 @import 'views/_about.scss';
 @import 'views/_registration.scss';
-
-.register {
-}
+@import 'views/_car_post.scss';

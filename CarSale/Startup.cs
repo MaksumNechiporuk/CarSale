@@ -9,27 +9,19 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using System;
+using System.IO;
 
 namespace CarSale
 {
-
     public class Startup
     {
-
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-
-
         public IConfiguration Configuration { get; }
-
-
-
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DBContext>(options =>
@@ -60,7 +52,6 @@ namespace CarSale
             {
                 app.UseExceptionHandler("/Error");
             }
-
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
@@ -79,7 +70,9 @@ namespace CarSale
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
+                    spa.UseReactDevelopmentServer(npmScript: "start --host 0.0.0.0:3000");
+                    // spa.UseReactDevelopmentServer("http://localhost:3000");
+
                 }
             });
             using (var scope = app.ApplicationServices.CreateScope())

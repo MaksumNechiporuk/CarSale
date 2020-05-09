@@ -14,6 +14,7 @@ namespace CarSale.Entities
         public DbSet<Make> Makes { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<MakesAndModels> MakesAndModels { get; set; }
+        public DbSet<UserCar> userCars { get; set; }
 
         public DbSet<FilterName> FilterNames { get; set; }
         public DbSet<FilterValue> FilterValues { get; set; }
@@ -47,6 +48,20 @@ namespace CarSale.Entities
                     .IsRequired();
             });
 
+            modelBuilder.Entity<UserCar>(users_car =>
+            {
+                users_car.HasKey(f => new { f.UserId, f.CarId });
+
+                users_car.HasOne(user => user.UserOf)
+                    .WithMany(r => r.UserCar)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+
+                users_car.HasOne(ur => ur.CarOf)
+                    .WithMany(r => r.UserCar)
+                    .HasForeignKey(ur => ur.CarId)
+                    .IsRequired();
+            });
             modelBuilder.Entity<MakesAndModels>(make_and_models =>
             {
                 make_and_models.HasKey(f => new { f.FilterValueId, f.FilterMakeId });

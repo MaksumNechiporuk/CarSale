@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CarSale.Entities;
+using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Entities.Models
 {
@@ -17,5 +19,7 @@ namespace Entities.Models
         public string City { get; set; }
 
         public string Img { get; set; }
+        public virtual ICollection<UserCar> UserCar { get; set; }
+
     }
 }

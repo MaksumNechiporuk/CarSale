@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CarSale.Entities;
 using CarSale.Helpers;
+using CarSale.ViewModel;
 using CarSale.ViewModels;
 using Helpers;
 using Image.Help;
@@ -56,7 +57,7 @@ namespace CarSale.Controllers
                              {
                                  Id = c.Id,
                                  Date = c.Date,
-                                 Image = $"{path}/{c.UniqueName}/Photo",
+                                 Image = Directory.GetFiles($"wwwroot/{path}/{c.UniqueName}").ToList(),
                                  Price = c.Price,
                                  Name = c.Name,
                                  UniqueName = c.UniqueName,
@@ -75,9 +76,13 @@ namespace CarSale.Controllers
             var m = GetMakes(i);
             if (m != null)
                 resultCar.filters.Add(m);
+            for (int j = 0; j < resultCar.Image.Count; j++)
+            {
+                resultCar.Image[j] = resultCar.Image[j].Replace("wwwroot/", "");
+            }
+
             return Ok(resultCar);
         }
-
         [HttpGet("GetCarsForUpdate")]
         public IActionResult GetCarsForUpdate(int CarId)
         {
@@ -207,7 +212,7 @@ namespace CarSale.Controllers
         }
         //Used
         [HttpGet("GetCars")]
-        public IActionResult GetCars()
+        public Pagination GetCars(int page, int count)
         {
             string path = "images";
             var cars = (from g in _context.Cars
@@ -224,9 +229,13 @@ namespace CarSale.Controllers
                                  State = c.State,
                                  Date = c.Date,
                                  Mileage = c.Mileage
-                             }).ToList();
-
-            return Ok(resultCar);
+                             }).AsQueryable();
+            var pagination = new Pagination()
+            {
+                Cars = PagedList<CarShowVM>.ToPagedList(resultCar, page, count),
+                CountPage = (int)Math.Ceiling(cars.Count / (double)count)
+            };
+            return pagination;
         }
 
         public FNameGetViewModel GetMakes(int id)

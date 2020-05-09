@@ -233,6 +233,485 @@ namespace CarSale.Entities
             {
                         new Car
                         {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
+                            //UniqueName = Guid.NewGuid().ToString(),
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },
+                         new Car
+                        {
+                            Date ="2018",
+                            Price = 28000,
+                            Mileage = 0,
+                            Name = "Honda Accord LX",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2012",
+                            Price = 20000,
+                            Mileage = 200000,
+                            Name = "BMW X5",
+                            State="Used"
+                        },
+                        new Car
+                        {
+                            Date ="2020",
+                            Price = 20223,
+                            Mileage = 0,
+                            Name = "Renault Duster",
+                            State="New"
+                        },
+                        new Car
+                        {
+                            Date ="2016",
+                            Price = 15800,
+                            Mileage = 49000,
+                            Name = "Volkswagen Passat B8",
+                            State="Used"
+                        },                        new Car
+                        {
                             //UniqueName = Guid.NewGuid().ToString(),
                             Date ="2018",
                             Price = 28000,
@@ -267,7 +746,23 @@ namespace CarSale.Entities
 
             };
             List<string> cars = new List<string>{
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
+             "154muv2f", "154m2fas","152m2fas","151m2fas",
              "154muv2f", "154m2fas","152m2fas","151m2fas"
+
             };
             var res = carList.Zip(cars, (n, w) => new { car = n, carName = w });
 
@@ -275,13 +770,14 @@ namespace CarSale.Entities
             {
                 string path = Path.Combine("images", item.carName);
 
-                if (context.Cars.SingleOrDefault(f => f.UniqueName == item.carName) == null)
                 {
                     if (!Directory.Exists(path))
+                    {
                         Directory.CreateDirectory(path);
-                    item.car.UniqueName = item.carName;
-                    context.Cars.Add(item.car);
-                    context.SaveChanges();
+                        item.car.UniqueName = item.carName;
+                        context.Cars.Add(item.car);
+                        context.SaveChanges();
+                    }
                 }
             }
             #endregion
@@ -314,6 +810,378 @@ namespace CarSale.Entities
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=4 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=4 },
 
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=5 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=5 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=5 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=5 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=5 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=6 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=6 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=6 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=6 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=6 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=7 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=7 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=7 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=7 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=7 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=8 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=8},
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=8 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=8 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=8 },
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=9 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=9 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=9 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=9 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=9 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=10 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=10 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=10 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=10 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=10 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=10 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=10 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=10 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=10 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=10 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=11 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=11 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=11 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=11 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=11 },
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=12 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=12 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=12 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=12},
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=12 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=13 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=13 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=13 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=13 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=13 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=14 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=14 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=14 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=14 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=14 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=15 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=15 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=15 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=15 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=15 },
+
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=16 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=16 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=16 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=16 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=16 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=17 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=17 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=17 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=17 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=17 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=18 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=18 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=18 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=18 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=18 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=19 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=19 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=19 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=19 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=19 },
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=20 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=20 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=20 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=20 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=20 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=21 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=21 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=21 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=21 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=21 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=22 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=22 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=22 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=22 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=22 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=23 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=23 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=23 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=23 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=23 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=24 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=24 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=24 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=24 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=24 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=25 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=25 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=25 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=25 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=25 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=26 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=26 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=26 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=26 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=26 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=27 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=27 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=27 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=27 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=27 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=28 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=28 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=28 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=28 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=28 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=29 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=29 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=29 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=29},
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=29 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=30 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=30 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=30 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=30 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=30 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=31 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=31 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=31 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=31},
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=31},
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=32 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=32},
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=32 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=32 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=1 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=33 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=33 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=33 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=33 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=33 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=34 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=34 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=34 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=34 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=34 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=35 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=35 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=35 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=35 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=35},
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=36 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=36 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=36 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=36 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=36 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=37 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=37 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=37 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=37 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=37 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=38 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=38 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=38 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=38 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=38 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=39 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=39 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=39 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=39 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=39 },
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=40 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=40 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=40 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=40 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=40 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=41 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=41},
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=41 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=41 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=41 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=42 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=42 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=42 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=42 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=42 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=44 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=44 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=44 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=44 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=44 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=45 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=45 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=45 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=45 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=45 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=46 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=46 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=46 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=46 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=46 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=47 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=47 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=47 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=47 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=47 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=48 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=48 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=48 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=48 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=48 },
+
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=49 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=49 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=49 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=49 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=49 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=50 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=50 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=50 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=50 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=50 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=51 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=51 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=51 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=51 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=51 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=52 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=52 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=52 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=52 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=52},
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=53 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=53 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=53 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=53 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=53 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=54 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=54 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=54 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=54 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=54 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=55 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=55 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=55 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=55 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=55 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=56 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=56 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=56 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=56 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=56 },
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=57 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=57 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=57 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=57 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=57 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=58 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=58 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=58 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=58},
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=58 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=59 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=59 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=59 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=59 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=59 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=60 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=60 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=60 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=60 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=60 },
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=61 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=61 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=61 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=61 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=61 },
+
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=62 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=62 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=62 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=62 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=62 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=63 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=63 },
+                new Filter { FilterNameId = 3, FilterValueId=86, CarId=63 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=63 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=63 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=64 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=64 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=64 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=64 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=64 },
             };
             foreach (var item in filters)
             {
@@ -325,6 +1193,7 @@ namespace CarSale.Entities
                 }
             }
             #endregion
+
             MakesAndModels[] makesAndModels =
             {
                 new MakesAndModels { FilterMakeId = 18, FilterValueId=7 },
@@ -441,6 +1310,21 @@ namespace CarSale.Entities
                     context.MakesAndModels.Add(new MakesAndModels { FilterMakeId = item.FilterMakeId, FilterValueId = item.FilterValueId });
                     context.SaveChanges();
                 }
+            }
+            var Users = context.Users.ToList();
+            for (int i = 1, j = 0; i <= 72; i++, j++)
+            {
+                var item = new UserCar { CarId = i, UserId = Users[j].Id };
+                var check = context.userCars.SingleOrDefault(p => p == item);
+                if (check == null)
+                {
+
+                    context.userCars.Add(item);
+                    context.SaveChanges();
+
+                }
+                if (j == 3)
+                    j = 0;
             }
         }
     }

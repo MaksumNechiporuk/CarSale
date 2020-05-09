@@ -1,0 +1,67 @@
+﻿.information_block {
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+}
+
+.carPost {
+    padding: 5px;
+    background-color: white;
+}
+
+.image {
+    vertical-align: top;
+    width: auto;
+    max-height: 370px;
+}
+
+.carName {
+    @include font(40px,$font-sansextrabold_italic, $font--color-primary_3, 200);
+    text-align: center;
+}
+
+.product-price {
+    @include font(40px, $font-sansbold, $year--color, 200);
+    margin: 10px 0;
+    text-align: center;
+}
+
+.informationCar {
+    align-items: center;
+    margin-left: 20px;
+    display: inline-grid;
+}
+
+.imgGallery {
+    a {
+        img {
+            width: auto;
+            height: 180px;
+            max-height: 200px;
+            object-fit: cover;
+            padding: 25px;
+        }
+    }
+
+    img {
+        width: auto;
+        height: 180px;
+        max-height: 200px;
+        object-fit: cover;
+    }
+    /*object-position: 50% 0;*/
+}
+
+
+
+.p-lightbox {
+    img {
+        width: auto;
+        height: 680px;
+        max-height: 700px;
+        object-fit: cover;
+    }
+}
