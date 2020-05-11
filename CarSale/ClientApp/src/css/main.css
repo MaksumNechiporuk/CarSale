@@ -4456,6 +4456,16 @@ ul {
     .page_not_found .error {
       font-size: 60px; } }
 
+.admin-panel .filter-header {
+  color: #9a9a9a; }
+
+.admin-panel .btn-addfilter {
+  background-color: #0f5b91;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 0px;
+  padding: 5px 15px; }
+
 body {
   font-family: 'Montserrat', sans-serif; }
 

@@ -14,6 +14,8 @@ import EditProfile from "./components/Profile/EditProfile/EditProfile"
 import ShowProfile from "./components/Profile/ShowProfile/ShowProfile"
 
 import CarPost from "./components/CarList/CarItem/CarPost/CarPost"
+
+import AdminPanel from "./components/AdminPanel/AdminPanel"
 function App() {
 	return (
 		<Fragment>
@@ -50,7 +52,8 @@ function App() {
 				render={(props) => (
 					<CarPost {...props} />
 				)}
-			/>
+            />
+            <AdminPanel />
 		</Fragment>
 	);
 }

@@ -25,7 +25,7 @@ namespace CarSale
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("ServerConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
