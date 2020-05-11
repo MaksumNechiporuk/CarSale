@@ -779,6 +779,7 @@ namespace CarSale.Entities
                         context.SaveChanges();
                     }
 
+
                 }
             }
             #endregion
@@ -811,7 +812,7 @@ namespace CarSale.Entities
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=4 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=4 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=5 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=5 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=5 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=5 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=5 },
@@ -836,7 +837,7 @@ namespace CarSale.Entities
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=8 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=8 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=9 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=9 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=9 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=9 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=9 },
@@ -887,7 +888,7 @@ namespace CarSale.Entities
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=15 },
 
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=16 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=16 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=16 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=16 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=16 },

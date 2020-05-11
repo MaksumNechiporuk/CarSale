@@ -59,7 +59,7 @@ const selectCar = {
 	name: ""
 }
 const initialState = {
-	carList: [], selectCar: {}, totalPage: 0, CarsOwner: {}
+	carList: [], selectCar: {}, totalPage: 0, CarsOwner: {}, selectFilters: []
 };
 
 export const reducer = (state, action) => {
@@ -67,9 +67,8 @@ export const reducer = (state, action) => {
 	if (action.type === "GetCars") {
 		return Object.assign({}, state, {
 			carList: action.cars,
-			totalPage: action.countPage
-
-
+			totalPage: action.countPage,
+			selectFilters: action.value
 		})
 	}
 	if (action.type === "GetCarsById") {
@@ -84,6 +83,11 @@ export const reducer = (state, action) => {
 			CarsOwner: action.user
 
 
+		})
+	} if (action.type === "CarsByFilter") {
+		return Object.assign({}, state, {
+			carList: action.cars,
+			totalPage: action.countPage
 		})
 	}
 	return state;

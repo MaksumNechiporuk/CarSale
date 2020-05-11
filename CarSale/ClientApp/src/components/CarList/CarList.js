@@ -25,8 +25,8 @@ class CarList extends Component {
 
 	}
 	async	ensureDataFetched() {
-		console.log(this.state);
-		await this.props.GetrequestCarList(this.state.currentPage, 9);
+		console.log("filters", this.props);
+		await this.props.GetrequestCarList(this.state.currentPage, 9, this.props.selectFilters);
 		this.setState({
 			loading: false
 		});
@@ -43,11 +43,9 @@ class CarList extends Component {
 				loading: false
 			});
 		});
-
 		window.scrollTo(0, this.myRef.current.offsetTop)
 		let path = `/Cars/${selectedPage + 1}`;
-		this.props.history.push(path)
-
+		this.props.history.push(path);
 	}
 	RenderRedirect() {
 		return <Redirect to="/" />;
@@ -108,7 +106,8 @@ class CarList extends Component {
 const mapStateToProps = state => {
 	return {
 		carList: state.carList,
-		totalPage: state.totalPage
+		totalPage: state.totalPage,
+		selectFilters: state.carList.selectFilters
 	};
 };
 

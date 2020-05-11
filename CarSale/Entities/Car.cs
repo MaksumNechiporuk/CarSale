@@ -29,6 +29,8 @@ namespace CarSale.Entities
         public string State { get; set; }
         public virtual ICollection<Filter> Filtres { get; set; }
         public virtual ICollection<UserCar> UserCar { get; set; }
+        public virtual ICollection<FilterMake> FilterMakes { get; set; }
+
 
     }
 }

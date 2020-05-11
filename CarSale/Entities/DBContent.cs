@@ -11,6 +11,9 @@ namespace CarSale.Entities
         {
 
         }
+
+        public DbSet<FilterMake> filterMakes { get; set; }
+
         public DbSet<Make> Makes { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<MakesAndModels> MakesAndModels { get; set; }
@@ -28,6 +31,19 @@ namespace CarSale.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<FilterMake>(filter =>
+            {
+                filter.HasKey(f => new { f.CarId, f.MakeNameId });
+
+                filter.HasOne(ur => ur.MakeNameOf)
+                    .WithMany(r => r.FilterMakes)
+                    .HasForeignKey(ur => ur.MakeNameId)
+                    .IsRequired();
+                filter.HasOne(ur => ur.CarOf)
+                    .WithMany(r => r.FilterMakes)
+                    .HasForeignKey(ur => ur.CarId)
+                    .IsRequired();
+            });
             modelBuilder.Entity<Filter>(filter =>
             {
                 filter.HasKey(f => new { f.CarId, f.FilterValueId, f.FilterNameId });

@@ -4140,6 +4140,16 @@ ul {
     height: 25px;
     font-family: open_sanssemibold;
     color: #9a9a9a; }
+  .header-search .price-item {
+    width: 45%;
+    margin: 5px 0;
+    border-radius: 5px;
+    height: 25px;
+    font-family: open_sanssemibold;
+    color: #333434; }
+    .header-search .price-item ::-webkit-input-placeholder {
+      color: black;
+      opacity: .5; }
   .header-search .buttons-group {
     /*     position: relative; */
     padding-top: 20px;
