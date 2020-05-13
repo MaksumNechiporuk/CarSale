@@ -70,7 +70,7 @@ namespace CarSale
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start --host 0.0.0.0:3000");
+                    spa.UseReactDevelopmentServer(npmScript: "start");
                     // spa.UseReactDevelopmentServer("http://localhost:3000");
 
                 }

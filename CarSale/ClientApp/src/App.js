@@ -14,6 +14,9 @@ import EditProfile from "./components/Profile/EditProfile/EditProfile"
 import ShowProfile from "./components/Profile/ShowProfile/ShowProfile"
 
 import CarPost from "./components/CarList/CarItem/CarPost/CarPost"
+import Registration from "./components/Registration/Registration"
+import Login from "./components/Login/Login"
+
 function App() {
 	return (
 		<Fragment>
@@ -36,7 +39,21 @@ function App() {
 						<About />
 					</Fragment>
 				)}
-			/>
+            />
+            <Route
+                path="/Registration"
+                exact
+                render={(props) => (
+                    <Registration {...props} />
+                )}
+            />
+            <Route
+                path="/Login"
+                exact
+                render={(props) => (
+                    <Login {...props} />
+                )}
+            />
 			<Route
 				path="/Cars/:page"
 				exact
@@ -50,7 +67,7 @@ function App() {
 				render={(props) => (
 					<CarPost {...props} />
 				)}
-			/>
+            />
 		</Fragment>
 	);
 }

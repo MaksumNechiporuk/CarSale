@@ -18,11 +18,11 @@ class NavbarMenu extends Component {
 									<i className="fa fa-user"></i> My Account
                                     <i className="fa fa-chevron-down"></i>
 								</button>
-								<button type="submit" className="btn btn_register">Register</button>
-								<button type="submit" className="btn btn_login">Login</button>
+                                <NavLink className="btn btn_register" exact href="#" to="/Registration">Registration</NavLink>
+                                <NavLink  className="btn btn_login" exact href="#" to="/Login">Login</NavLink>
 							</ul>
 							<div
-								className="phone-burger d-none d-block d-sm-none d-sm-block d-xs d-lg-none"
+								className="phone-burger d-none d-block d-sm-none d-sm-block d-xs d-lg-none" 
 							>
 								<div className="wrapper">
 									<input type="checkbox" id="check-menu" />

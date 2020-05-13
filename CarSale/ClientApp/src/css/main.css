@@ -3804,7 +3804,8 @@ ul {
   color: #ffffff;
   font-weight: 400;
   text-transform: uppercase;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
 
 .btn_register:hover {
   background-color: #4298d5; }
@@ -4587,6 +4588,72 @@ body {
     background-repeat: no-repeat;
     background-position: center; }
 
+body {
+  font-family: calibri;
+  padding: 0;
+  margin: 0; }
+
+.loginBox {
+  margin: 1% auto 0% auto;
+  padding: 5px 60px 20px 60px;
+  width: 40%;
+  height: 50%;
+  box-sizing: border-box;
+  background: #0f5b91; }
+
+h2 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  color: black; }
+
+.loginBox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #fff; }
+
+.loginBox input {
+  width: 100%;
+  height: 20px;
+  margin: 0 0 20px 0; }
+
+.loginBox input[type="text"],
+.loginBox input[type="password"],
+.loginBox input[type="email"],
+.loginBox input[type="date"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  text-align: center; }
+
+::placeholder {
+  color: white;
+  opacity: 0.1;
+  text-align: center; }
+
+.loginBox input[type="submit"] {
+  border: 1px solid;
+  height: 40px;
+  color: #a4d8fd;
+  background-color: transparent; }
+
+.loginBox input[type="submit"]:hover {
+  color: pink;
+  border: 2px solid; }
+
+form a {
+  color: #a4d8fd;
+  text-decoration: none; }
+
+/*.has-error {
+    .color-errors {
+        color: #ffe399;
+    }
+}*/
 body {
   font-family: calibri;
   padding: 0;

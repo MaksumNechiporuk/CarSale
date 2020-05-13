@@ -17,7 +17,7 @@ h2 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
-    color: black;
+    color: #a4d8fd;
 }
 
 .loginBox p {
@@ -33,18 +33,18 @@ h2 {
     margin: 0 0 20px 0;
 }
 
-    .loginBox input[type="text"],
-    .loginBox input[type="password"],
-    .loginBox input[type="email"],
-    .loginBox input[type="date"] {
-        border: none;
-        border-bottom: 1px solid #fff;
-        background: transparent;
-        outline: none;
-        color: #fff;
-        font-size: 14px;
-        text-align: center;
-    }
+.loginBox input[type="text"],
+.loginBox input[type="password"],
+.loginBox input[type="email"],
+.loginBox input[type="date"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
 
 ::placeholder {
     color: white;
@@ -59,18 +59,12 @@ h2 {
     background-color: transparent;
 }
 
-    .loginBox input[type="submit"]:hover {
-        color: pink;
-        border: 2px solid;
-    }
+.loginBox input[type="submit"]:hover {
+    color: pink;
+    border: 2px solid;
+}
 
 form a {
     color: #a4d8fd;
     text-decoration: none;
 }
-/*.has-error {
-    .color-errors {
-        color: #ffe399;
-    }
-}*/
-

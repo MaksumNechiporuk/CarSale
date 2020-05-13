@@ -30,6 +30,8 @@ namespace CarSale.ViewModel
         [Required]
         public string City { get; set; }
 
-        public string Img { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
+   
     }
 }
