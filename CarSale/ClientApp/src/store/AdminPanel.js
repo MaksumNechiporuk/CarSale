@@ -1,6 +1,5 @@
-﻿
-const initialState = {
-    value, name
+﻿const initialState = {
+    value:[], name:""
 };
 
 export const reducer = (state, action) => {
@@ -9,8 +8,6 @@ export const reducer = (state, action) => {
         return Object.assign({}, state, {
             value: action.value,
             name: action.name
-
-
         })
     }
     return state;

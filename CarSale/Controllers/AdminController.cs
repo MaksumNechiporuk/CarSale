@@ -20,53 +20,57 @@ namespace CarSale.Controllers
             _context = context;
         }
         [HttpPost("AddFilter")]
-        public IActionResult AddFilter(string value, string name)
+        public IActionResult AddFilter(FilterAddViewModel filter)
         {
             if (!ModelState.IsValid)
             {
                 var errors = CustomValidator.GetErrorsByModel(ModelState);
                 return BadRequest(errors);
             }
-            if (_context.FilterNames.SingleOrDefault(f => f.Name == name) == null)
+            if (_context.FilterNames.SingleOrDefault(f => f.Name == filter.Name) == null)
             {
                 _context.FilterNames.Add(
                     new Entities.FilterName
                     {
-                        Name = name
+                        Name = filter.Name
                     });
                 _context.SaveChanges();
             }
-            if (_context.FilterValues
-                          .SingleOrDefault(f => f.Name == value) == null)
+            foreach (var item in filter.values)
             {
-                _context.FilterValues.Add(
-                    new Entities.FilterValue
-                    {
-                        Name = value
-                    });
-                _context.SaveChanges();
+                if (_context.FilterValues
+                          .SingleOrDefault(f => f.Name == item) == null)
+                {
+                    _context.FilterValues.Add(
+                        new Entities.FilterValue
+                        {
+                            Name = item
+                        });
+                    _context.SaveChanges();
+                }
             }
+            
             var nId = _context.FilterNames
-                        .SingleOrDefault(f => f.Name == name).Id;
-            var vId = _context.FilterValues
-                .SingleOrDefault(f => f.Name == value).Id;
-            if (_context.FilterNameGroups
-                .SingleOrDefault(f => f.FilterValueId == vId &&
-                f.FilterNameId == nId) == null)
+                        .SingleOrDefault(f => f.Name == filter.Name).Id;
+            foreach (var item in filter.values)
             {
-                _context.FilterNameGroups.Add(
-                    new Entities.FilterNameGroup
-                    {
-                        FilterNameId = nId,
-                        FilterValueId = vId
-                    });
-                _context.SaveChanges();
+                var vId = _context.FilterValues
+                .SingleOrDefault(f => f.Name == item).Id;
+                if (_context.FilterNameGroups
+                    .SingleOrDefault(f => f.FilterValueId == vId &&
+                    f.FilterNameId == nId) == null)
+                {
+                    _context.FilterNameGroups.Add(
+                        new Entities.FilterNameGroup
+                        {
+                            FilterNameId = nId,
+                            FilterValueId = vId
+                        });
+                    _context.SaveChanges();
+                }
             }
-            string val = _context.FilterValues
-                          .SingleOrDefault(f => f.Id == vId).Name;
-            string nam = _context.FilterNames
-                          .SingleOrDefault(f => f.Id == nId).Name;
-            return Ok(nam + " " + val);
+            
+            return Ok();
         }
     }
 }

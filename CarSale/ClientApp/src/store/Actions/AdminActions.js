@@ -1,15 +1,15 @@
 ﻿import axios from "axios";
+import qs from "qs";
 
 export const actionCreators = {
-    PostFilters: (value, name) => async (dispatch) => {
+    AddFilter: (filters) => async (dispatch) => {
         const url = `api/Admin/AddFilter`;
         let item;
         await axios
-            .post(url, { params: { name: name, value: value } })
+            .post(url,filters
+            )
             .then(response =>
                 item = response.data);
-        let { addedvalue, addedname } = item;
-        dispatch({ type: "AddFilter", addedvalue, addedname });
         return;
 
     }
