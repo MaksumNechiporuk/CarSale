@@ -40,7 +40,7 @@ namespace CarSale.ViewModels
         public int Id { get; set; }
         public string Date { get; set; }
         public string Image { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
 
@@ -53,7 +53,7 @@ namespace CarSale.ViewModels
         public int Id { get; set; }
         public string Date { get; set; }
         public List<string> Image { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
         public List<FNameGetViewModel> filters { get; set; }
@@ -64,7 +64,7 @@ namespace CarSale.ViewModels
         public string Date { get; set; }
         public string MainImage { get; set; }
         public List<string> AdditionalImage { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public int Count { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
@@ -73,7 +73,7 @@ namespace CarSale.ViewModels
     public class CarsByFilterVM
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string Image { get; set; }
 
         public string UniqueName { get; set; }
@@ -91,7 +91,7 @@ namespace CarSale.ViewModels
         [Required(ErrorMessage = "Поле не може бути пустим")]
         public List<string> AdditionalImage { get; set; }
         [Required(ErrorMessage = "Поле не може бути пустим")]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         [Required(ErrorMessage = "Поле не може бути пустим")]
         public int Count { get; set; }
         [Required(ErrorMessage = "Поле не може бути пустим")]

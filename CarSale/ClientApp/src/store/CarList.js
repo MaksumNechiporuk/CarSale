@@ -59,7 +59,7 @@ const selectCar = {
 	name: ""
 }
 const initialState = {
-	carList: [], selectCar: {}, totalPage: 0, CarsOwner: {}, selectFilters: []
+	carList: [], selectCar: {}, totalPage: 0, CarsOwner: {}, selectFilters: [], selectMake: [], maxPrice:0, minPrice:0
 };
 
 export const reducer = (state, action) => {
@@ -68,7 +68,10 @@ export const reducer = (state, action) => {
 		return Object.assign({}, state, {
 			carList: action.cars,
 			totalPage: action.countPage,
-			selectFilters: action.value
+			selectFilters: action.value,
+			selectMake: action.makeId,
+			maxPrice: action.maxPrice,
+			minPrice: action.minPrice
 		})
 	}
 	if (action.type === "GetCarsById") {

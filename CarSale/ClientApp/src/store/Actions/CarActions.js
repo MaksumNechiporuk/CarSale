@@ -1,14 +1,14 @@
 ﻿import axios from "axios";
 import qs from "qs"
 export const actionCreators = {
-	GetrequestCarList: (page, count, value) => async (dispatch) => {
+	GetrequestCarList: (page, count, value, makeId, maxPrice, minPrice) => async (dispatch) => {
 		const url = `api/Car/GetCars`;
 		let item;
 		console.log("value:", value);
 
 		await axios
 			.get(url, {
-				params: { page: page, count: count, value: value },
+				params: { page: page, count: count, value: value, makeId: makeId, maxPrice: maxPrice, minPrice: minPrice },
 				paramsSerializer: params => {
 					return qs.stringify(params)
 				}
@@ -16,7 +16,7 @@ export const actionCreators = {
 			.then(response =>
 				item = response.data);
 		let { cars, countPage } = item;
-		dispatch({ type: "GetCars", cars, countPage, value });
+		dispatch({ type: "GetCars", cars, countPage, value, makeId, maxPrice, minPrice });
 		return;
 
 	},

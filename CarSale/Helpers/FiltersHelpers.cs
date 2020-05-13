@@ -37,48 +37,40 @@ namespace CarSale.Helpers
             }
             return modelsList;
         }
-        static public List<Car> GetCarsByMake(int[] values, DBContext _context)
+        static public List<Car> GetCarsByMakes(int[] values, DBContext _context, List<Car> CarsList)
         {
-            int[] filterValueSearchList = values;
-            var query = _context
-                .Cars
-                .Include(f => f.Filtres)
-                .AsQueryable();
-            List<FNameViewModel> filtersList = GetListFilters(_context);
-            foreach (var fName in filtersList)
+            var newList = new List<Car>();
+            var newList1 = new List<Car>();
+
+            foreach (var item in values)
             {
-                int count = 0; //Кількість співпадінь у даній групі фільтрів
-                var predicate = PredicateBuilder.False<Car>();
-                foreach (var fValue in fName.Children)
+                var deletecar = _context.filterMakes.Where((car) => car.MakeNameId == item).Select(p => new Car
                 {
-                    for (int i = 0; i < filterValueSearchList.Length; i++)
+                    Id = p.CarOf.Id,
+                    Price = p.CarOf.Price,
+                    UniqueName = p.CarOf.UniqueName,
+                    Name = p.CarOf.Name,
+                    Date = p.CarOf.Date,
+                    Mileage = p.CarOf.Mileage,
+                    State = p.CarOf.State
+                }).ToList();
+                if (deletecar != null)
+                {
+                    newList.AddRange(deletecar);
+                }
+            }
+            foreach (var item in newList)
+            {
+                foreach (var item1 in CarsList)
+                {
+                    if (item.Id == item1.Id)
                     {
-                        var idV = fValue.Id;
-                        if (filterValueSearchList[i] == idV)
-                        {
-                            predicate = predicate
-                                .Or(p => p.Filtres
-                                    .Any(f => f.FilterValueId == idV));
-                            count++;
-                        }
+                        newList1.Add(item);
+                        break;
                     }
                 }
-                if (count != 0)
-                    query = query.Where(predicate);
             }
-
-
-            var listProductSearch = query.Select(p => new Car
-            {
-                Id = p.Id,
-                Price = p.Price,
-                UniqueName = p.UniqueName,
-                Name = p.Name,
-                Date = p.Date,
-                Mileage = p.Mileage,
-                State = p.State
-            }).ToList();
-            return listProductSearch;
+            return newList1;
         }
         static public List<Car> GetCarsByFilter(int[] values, DBContext _context)
         {

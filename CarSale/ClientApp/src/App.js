@@ -20,9 +20,9 @@ function App() {
 			<Route
 				path="/"
 
-				render={() => (
+				render={(props) => (
 					<Fragment>
-						<Header />
+						<Header {...props} />
 
 					</Fragment>
 				)}
@@ -39,7 +39,7 @@ function App() {
 			/>
 			<Route
 				path="/Cars/:page"
-				exact
+
 				render={(props) => (
 					<CarList {...props} />
 				)}

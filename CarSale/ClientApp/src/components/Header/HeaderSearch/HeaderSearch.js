@@ -5,6 +5,7 @@ import { actionCreators } from "../../../store/Actions/FiltersActions";
 import { MultiSelect } from 'primereact/multiselect';
 import { InputNumber } from 'primereact/inputnumber';
 import { actionCreators as carActions } from "../../../store/Actions/CarActions";
+import { withRouter } from "react-router";
 
 class HeaderSearch extends Component {
 
@@ -27,7 +28,6 @@ class HeaderSearch extends Component {
 	async	getModels() {
 		await this.props.GetModelsByMakes(this.state.make);
 	}
-
 	async	ensureDataFetched() {
 		await this.props.GetRequestMakes();
 	}
@@ -61,9 +61,11 @@ class HeaderSearch extends Component {
 	}
 	onSubmit = event => {
 		event.preventDefault();
-		let { model, color, StateCar, typeOfCar } = this.state;
+		let { model, color, StateCar, typeOfCar, make, maxPrice, minPrice } = this.state;
 		let filters = [...model, ...color, ...StateCar, ...typeOfCar];
-		this.props.GetrequestCarList(1, 9, filters);
+		this.props.GetrequestCarList(1, 9, filters, make, maxPrice, minPrice);
+		let path = `/Cars/1`;
+		this.props.history.push(path);
 	};
 	resetForm = event => {
 		event.preventDefault();
@@ -77,14 +79,12 @@ class HeaderSearch extends Component {
 			minPrice: null
 		}, async () => {
 			let { model, color, StateCar, typeOfCar } = this.state;
-
 			let filters = [...model, ...color, ...StateCar, ...typeOfCar];
 			console.log("filters:", filters);
-
 			await this.props.GetrequestCarList(1, 9, filters);
 		});
-
-
+		let path = `/Cars/1`;
+		this.props.history.push(path);
 	};
 
 	render() {
@@ -178,4 +178,5 @@ const mapDispatchToProps = dispatch => {
 		GetrequestCarList
 	};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderSearch);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderSearch));
+

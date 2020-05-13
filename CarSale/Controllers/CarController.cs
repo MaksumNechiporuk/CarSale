@@ -131,10 +131,12 @@ namespace CarSale.Controllers
             return Ok(car);
         }
         [HttpGet("GetCars")]
-        public Pagination GetCars(int page, int count, int[] value, int[] makeId)
+        public Pagination GetCars(int page, int count, int[] value, int[] makeId, double minPrice, double maxPrice = Double.PositiveInfinity)
         {
             string path = "images";
             List<Car> cars;
+
+
             if (value != null)
             {
                 cars = FiltersHelpers.GetCarsByFilter(value, _context);
@@ -144,7 +146,11 @@ namespace CarSale.Controllers
                 cars = (from g in _context.Cars
                         select g).ToList();
             }
-
+            if (makeId.Length != 0)
+            {
+                cars = FiltersHelpers.GetCarsByMakes(makeId, _context, cars);
+            }
+            cars = cars.Where((car) => car.Price >= minPrice && car.Price <= maxPrice).ToList();
             var resultCar = (from c in cars
                              select
                              new CarShowVM
@@ -158,6 +164,7 @@ namespace CarSale.Controllers
                                  Date = c.Date,
                                  Mileage = c.Mileage
                              }).AsQueryable();
+
             var pagination = new Pagination()
             {
                 Cars = PagedList<CarShowVM>.ToPagedList(resultCar, page, count),
