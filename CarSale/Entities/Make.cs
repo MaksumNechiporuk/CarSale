@@ -16,5 +16,7 @@ namespace CarSale.Entities
         public string Name { get; set; }
 
         public virtual ICollection<MakesAndModels> MakesAndModels { get; set; }
+        public virtual ICollection<FilterMake> FilterMakes { get; set; }
+
     }
 }

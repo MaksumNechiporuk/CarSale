@@ -86,7 +86,7 @@ namespace CarSale.Entities
                              Img = "https://img.icons8.com/officel/2x/user.png",
                              Email="John@gmail.com",
                              UserName="John@gmail.com",
-                                                                               PhoneNumber="380986653418"
+                             PhoneNumber="380986653418"
 
                          }
             };
@@ -765,20 +765,26 @@ namespace CarSale.Entities
 
             };
             var res = carList.Zip(cars, (n, w) => new { car = n, carName = w });
-
-            foreach (var item in res)
+            if (!context.Cars.Any())
             {
-                string path = Path.Combine("images", item.carName);
-
+                int i = 0;
+                foreach (var item in res)
                 {
-                    if (!Directory.Exists(path))
+                    string path = Path.Combine("images", item.carName);
+
                     {
-                        Directory.CreateDirectory(path);
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path);
+
+                        }
                         item.car.UniqueName = item.carName;
                         context.Cars.Add(item.car);
                         context.SaveChanges();
                     }
-
+                    i++;
+                    //if (i == 4)
+                    //    break;
                 }
             }
             #endregion
@@ -801,17 +807,17 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=3 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=3 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=3 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=3 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=3 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=3 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=3 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=4 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=4 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=4 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=4 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=4 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=4 },
-
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=5 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=4 },
+//////
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=5 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=5 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=5 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=5 },
@@ -826,17 +832,17 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=7 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=7 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=7 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=7 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=7 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=7 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=7 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=8 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=8},
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=8 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=8 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=8 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=8 },
-
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=9 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=8 },
+///////
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=9 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=9 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=9 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=9 },
@@ -849,219 +855,219 @@ namespace CarSale.Entities
                 new Filter { FilterNameId = 4, FilterValueId=96, CarId=10 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=10 },
 
-                new Filter { FilterNameId = 1, FilterValueId=2, CarId=10 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=10 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=10 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=10 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=10 },
-
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=11 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=11 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=11 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=11 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=11 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=11 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=12 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=12 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=12 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=12 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=12},
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=12 },
-
-
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=12 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=12 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=12 },
+///////
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=13 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=13 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=13 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=13 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=13 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=13 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=13},
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=13 },
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=14 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=14 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=14 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=14 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=14 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=14 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=14 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=15 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=15 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=15 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=15 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=15 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=15 },
 
-
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=16 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=16 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=16 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=16 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=16 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=16 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=16 },
-
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=16 },
+/////
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=17 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=17 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=17 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=17 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=17 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=17 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=17 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=17 },
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=18 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=18 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=18 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=18 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=18 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=18 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=18 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=19 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=19 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=19 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=19 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=19 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=19 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=20 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=20},
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=20 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=20 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=20 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=20 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=20 },
-
-
-                new Filter { FilterNameId = 1, FilterValueId=2, CarId=21 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=20 },
+                //////
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=21 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=21 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=21 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=21 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=21 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=21 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=21 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=21 },
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=22 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=22 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=22 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=22 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=22 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=22},
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=22 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=23 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=23 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=23 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=23 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=23 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=23 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=24 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=24 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=24 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=24 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=24 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=24 },
-
-
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=24},
+/////
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=25 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=25 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=25 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=25 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=25 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=25 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=25 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=25 },
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=26 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=26 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=26 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=26 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=26 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=26 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=26 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=27 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=27 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=27 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=27 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=27 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=27 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=28 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=28 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=28 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=28 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=28 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=28 },
-
-
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=28 },
+/////
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=29 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=29 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=29 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=29},
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=29 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=29 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=29},
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=29 },
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=30 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=30 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=30 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=30 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=30 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=30},
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=30 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=31 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=31 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=31 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=31},
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=31},
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=31 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=31 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=32 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=32},
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=32 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=32 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=1 },
-
-
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=32 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=32 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=32},
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=32},
+/////
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=33 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=33 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=33 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=33 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=33 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=33},
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=33 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=33 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=33},
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=34 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=34 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=34 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=34 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=34 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=34 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=34 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=35 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=35 },
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=35 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=35 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=35},
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=35 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=35 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=36 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=36 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=36 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=36 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=36 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=36 },
-
-
-                new Filter { FilterNameId = 1, FilterValueId=2, CarId=37 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=36 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=36},
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=36},
+//////
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=37 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=37 },
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=37 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=37 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=37 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=37 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=37 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=37},
+
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=38 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=38 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=38 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=38 },
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=38 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=38 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=38 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=39 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=39 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=39},
                 new Filter { FilterNameId = 3, FilterValueId=27, CarId=39 },
-                new Filter { FilterNameId = 4, FilterValueId=97, CarId=39 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=39 },
                 new Filter { FilterNameId = 5, FilterValueId=99, CarId=39 },
 
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=40 },
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=40 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=40 },
-                new Filter { FilterNameId = 3, FilterValueId=16, CarId=40 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=40 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=40 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=40 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=40 },
+                //////
+                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=41 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=41 },
+                new Filter { FilterNameId = 3, FilterValueId=16, CarId=41 },
+                new Filter { FilterNameId = 4, FilterValueId=97, CarId=41},
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=41 },
 
-
-                new Filter { FilterNameId = 1, FilterValueId=2, CarId=41 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=41},
-                new Filter { FilterNameId = 3, FilterValueId=90, CarId=41 },
-                new Filter { FilterNameId = 4, FilterValueId=96, CarId=41 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=41 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=42 },
-                new Filter { FilterNameId = 2, FilterValueId=5, CarId=42 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=42 },
-                new Filter { FilterNameId = 4, FilterValueId=98, CarId=42 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=42},
+                new Filter { FilterNameId = 3, FilterValueId=90, CarId=42 },
+                new Filter { FilterNameId = 4, FilterValueId=96, CarId=42 },
                 new Filter { FilterNameId = 5, FilterValueId=100, CarId=42 },
+
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=43 },
+                new Filter { FilterNameId = 2, FilterValueId=5, CarId=43 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=43 },
+                new Filter { FilterNameId = 4, FilterValueId=98, CarId=43 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=43 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=44 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=44 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=44 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=44 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=44 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=44 },
-
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=44 },
+/////
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=45 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=45 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=45 },
@@ -1077,16 +1083,16 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=47 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=47 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=47 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=47 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=47 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=47 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=47 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=48 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=48 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=48 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=48 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=48 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=48 },
-
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=48 },
+                ////
                                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=49 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=49 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=49 },
@@ -1102,16 +1108,17 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=51 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=51 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=51 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=51 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=51 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=51 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=51 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=52 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=52 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=52 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=52 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=52 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=52},
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=53 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=52},
+         /////
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=53 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=53 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=53 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=53 },
@@ -1126,16 +1133,17 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=55 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=55 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=55 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=55 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=55 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=55 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=55 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=56 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=56 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=56 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=56 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=56 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=56 },
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=57 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=56 },
+          /////
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=57 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=57 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=57 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=57 },
@@ -1150,16 +1158,18 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=59 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=59 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=59 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=59 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=59 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=59 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=59 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=60 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=60 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=60 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=60 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=60 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=60 },
-                                new Filter { FilterNameId = 1, FilterValueId=2, CarId=61 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=60 },
+           /////                     
+                
+                new Filter { FilterNameId = 1, FilterValueId=2, CarId=61 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=61 },
                 new Filter { FilterNameId = 3, FilterValueId=16, CarId=61 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=61 },
@@ -1174,15 +1184,15 @@ namespace CarSale.Entities
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=63 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=63 },
-                new Filter { FilterNameId = 3, FilterValueId=86, CarId=63 },
+                new Filter { FilterNameId = 3, FilterValueId=27, CarId=63 },
                 new Filter { FilterNameId = 4, FilterValueId=98, CarId=63 },
-                new Filter { FilterNameId = 5, FilterValueId=100, CarId=63 },
+                new Filter { FilterNameId = 5, FilterValueId=99, CarId=63 },
 
                 new Filter { FilterNameId = 1, FilterValueId=2, CarId=64 },
                 new Filter { FilterNameId = 2, FilterValueId=5, CarId=64 },
-                new Filter { FilterNameId = 3, FilterValueId=27, CarId=64 },
+                new Filter { FilterNameId = 3, FilterValueId=72, CarId=64 },
                 new Filter { FilterNameId = 4, FilterValueId=97, CarId=64 },
-                new Filter { FilterNameId = 5, FilterValueId=99, CarId=64 },
+                new Filter { FilterNameId = 5, FilterValueId=100, CarId=64 },
             };
             foreach (var item in filters)
             {
@@ -1315,6 +1325,8 @@ namespace CarSale.Entities
             var Users = context.Users.ToList();
             for (int i = 1, j = 0; i <= 64; i++, j++)
             {
+                if (j == 4)
+                    j = 0;
                 var item = new UserCar { CarId = i, UserId = Users[j].Id };
                 var check = context.userCars.SingleOrDefault(p => p == item);
                 if (check == null)
@@ -1324,9 +1336,23 @@ namespace CarSale.Entities
                     context.SaveChanges();
 
                 }
-                if (j == 3)
-                    j = 0;
+
             }
+            var makeId = new List<int>() { 17, 1, 14, 6 };
+            for (int i = 1, j = 0; i <= 64; i++, j++)
+            {
+                if (j == 4)
+                    j = 0;
+                var item = new FilterMake { CarId = i, MakeNameId = makeId[j] };
+                var check = context.filterMakes.SingleOrDefault(p => p == item);
+                if (check == null)
+                {
+                    context.filterMakes.Add(item);
+                    context.SaveChanges();
+                }
+
+            }
+
         }
     }
 }

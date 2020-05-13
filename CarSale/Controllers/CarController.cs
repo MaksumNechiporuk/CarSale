@@ -130,117 +130,27 @@ namespace CarSale.Controllers
             }).FirstOrDefault();
             return Ok(car);
         }
-
-        [HttpGet("CarsByFilter")]
-        public IActionResult FilterData(int[] value, string name)
-        {
-            var filters = GetListFilters(_context);
-            var list = GetCarsByFilter(value, filters).AsQueryable();
-            if (!String.IsNullOrEmpty(name))
-            {
-                list = list.Where(e => e.Name.Contains(name));
-            }
-            return Ok(list);
-        }
-        private List<FNameViewModel> GetListFilters(DBContext context)
-        {
-            var queryName = from f in context.FilterNames.AsQueryable()
-                            select f;
-            var queryGroup = from g in context.FilterNameGroups.AsQueryable()
-                             select g;
-
-            //Отримуємо загальну множину значень
-            var query = from u in queryName
-                        join g in queryGroup on u.Id equals g.FilterNameId into ua
-                        from aEmp in ua.DefaultIfEmpty()
-                        select new
-                        {
-                            FNameId = u.Id,
-                            FName = u.Name,
-                            FValueId = aEmp != null ? aEmp.FilterValueId : 0,
-                            FValue = aEmp != null ? aEmp.FilterValueOf.Name : null,
-                        };
-
-            //Групуємо по іменам і сортуємо по спаданю імен
-            var groupNames = (from f in query
-                              group f by new
-                              {
-                                  Id = f.FNameId,
-                                  Name = f.FName
-                              } into g
-                              //orderby g.Key.Name
-                              select g).OrderByDescending(g => g.Key.Name);
-
-            //По групах отримуємо
-            var result = from fName in groupNames
-                         select
-                         new FNameViewModel
-                         {
-                             Id = fName.Key.Id,
-                             Name = fName.Key.Name,
-                             Children = (from v in fName
-                                         group v by new FValueViewModel
-                                         {
-                                             Id = v.FValueId,
-                                             Name = v.FValue
-                                         } into g
-                                         select g.Key)
-                                         .OrderBy(l => l.Name).ToList()
-                         };
-
-            return result.ToList();
-        }
-        private List<CarsByFilterVM> GetCarsByFilter(int[] values, List<FNameViewModel> filtersList)
-        {
-            int[] filterValueSearchList = values;
-            var query = _context
-                .Cars
-                .Include(f => f.Filtres)
-                .AsQueryable();
-            foreach (var fName in filtersList)
-            {
-                int count = 0; //Кількість співпадінь у даній групі фільрів
-                var predicate = PredicateBuilder.False<Car>();
-                foreach (var fValue in fName.Children)
-                {
-                    for (int i = 0; i < filterValueSearchList.Length; i++)
-                    {
-                        var idV = fValue.Id;
-                        if (filterValueSearchList[i] == idV)
-                        {
-                            predicate = predicate
-                                .Or(p => p.Filtres
-
-                                    .Any(f => f.FilterValueId == idV));
-                            count++;
-                        }
-                    }
-                }
-                if (count != 0)
-                    query = query.Where(predicate);
-            }
-            string path = "images";
-
-
-            var listProductSearch = query.Select(p => new CarsByFilterVM
-            {
-                Id = p.Id,
-                Price = p.Price,
-                UniqueName = p.UniqueName,
-                Image = $"{path}/{p.UniqueName}/300_{p.UniqueName}.jpg",
-                Name = p.Name
-            }).ToList();
-            return listProductSearch;
-
-            //return null;
-        }
-        //Used
         [HttpGet("GetCars")]
-        public Pagination GetCars(int page, int count)
+        public Pagination GetCars(int page, int count, int[] value, int[] makeId, double minPrice, double maxPrice = Double.PositiveInfinity)
         {
             string path = "images";
-            var cars = (from g in _context.Cars
+            List<Car> cars;
+
+
+            if (value != null)
+            {
+                cars = FiltersHelpers.GetCarsByFilter(value, _context);
+            }
+            else
+            {
+                cars = (from g in _context.Cars
                         select g).ToList();
+            }
+            if (makeId.Length != 0)
+            {
+                cars = FiltersHelpers.GetCarsByMakes(makeId, _context, cars);
+            }
+            cars = cars.Where((car) => car.Price >= minPrice && car.Price <= maxPrice).ToList();
             var resultCar = (from c in cars
                              select
                              new CarShowVM
@@ -254,6 +164,7 @@ namespace CarSale.Controllers
                                  Date = c.Date,
                                  Mileage = c.Mileage
                              }).AsQueryable();
+
             var pagination = new Pagination()
             {
                 Cars = PagedList<CarShowVM>.ToPagedList(resultCar, page, count),
