@@ -4209,121 +4209,121 @@ ul {
     .header-search .search-part {
       width: 100%; } }
 
-.footer {
+footer {
   margin-top: 40px; }
-  .footer .wrapper {
+  footer .wrapper {
     display: inline-block;
     box-sizing: border-box; }
-    .footer .wrapper p h4 {
+    footer .wrapper p h4 {
       font-size: 18px;
       font-family: open_sansbold;
       color: #ffffff;
       font-weight: 400; }
-  .footer h4 {
+  footer h4 {
     padding-left: 40px; }
     @media screen and (max-width: 992px) {
-      .footer h4 {
+      footer h4 {
         font-size: 14px;
         font-family: open_sansbold;
         color: #ffffff;
         font-weight: 400;
         padding-left: 0px; } }
-  .footer .first-p {
+  footer .first-p {
     padding-left: 13px; }
-  .footer .p-schedule {
+  footer .p-schedule {
     display: inline-block;
     color: #ffffff;
     margin: 0px;
     padding-left: 40px; }
     @media screen and (max-width: 992px) {
-      .footer .p-schedule {
+      footer .p-schedule {
         font-size: 13px;
         font-family: open_sansbold;
         color: #ffffff;
         font-weight: 400;
         padding-left: 5px; } }
-  .footer .top--part {
+  footer .top--part {
     padding: 10px;
     text-align: center;
     background-color: #0f5b91; }
-  .footer .top-footer-font-1 {
+  footer .top-footer-font-1 {
     display: inline-block;
     color: #ffffff;
     margin: 0px; }
     @media screen and (max-width: 992px) {
-      .footer .top-footer-font-1 {
+      footer .top-footer-font-1 {
         font-size: 14px;
         font-family: open_sansbold;
         color: #ffffff;
         font-weight: 400; } }
-  .footer .photo {
+  footer .photo {
     color: #4298d5; }
-  .footer .photo-phone {
+  footer .photo-phone {
     position: relative;
     right: 2px; }
     @media screen and (max-width: 992px) {
-      .footer .photo-phone {
+      footer .photo-phone {
         top: 17px;
         margin-left: -10px; } }
     @media screen and (max-width: 767px) {
-      .footer .photo-phone {
+      footer .photo-phone {
         right: -8px;
         top: 10px;
         margin-left: -10px; } }
-  .footer .photo-wrench {
+  footer .photo-wrench {
     position: relative;
     right: 2px; }
     @media screen and (max-width: 992px) {
-      .footer .photo-wrench {
+      footer .photo-wrench {
         top: 17px;
         margin-left: -16px; } }
     @media screen and (max-width: 767px) {
-      .footer .photo-wrench {
+      footer .photo-wrench {
         top: 10px;
         margin-left: -16px; } }
-  .footer .photo-cogs {
+  footer .photo-cogs {
     position: relative;
     right: 2px; }
     @media screen and (max-width: 992px) {
-      .footer .photo-cogs {
+      footer .photo-cogs {
         top: 17px;
         margin-left: -8px; } }
     @media screen and (max-width: 767px) {
-      .footer .photo-cogs {
+      footer .photo-cogs {
         top: 10px;
         margin-left: -8px; } }
-  .footer .photo-square {
+  footer .photo-square {
     position: relative;
     right: 2px; }
     @media screen and (max-width: 992px) {
-      .footer .photo-square {
+      footer .photo-square {
         top: 17px;
         margin-left: -26px; } }
     @media screen and (max-width: 767px) {
-      .footer .photo-square {
+      footer .photo-square {
         top: 10px;
         margin-left: -26px; } }
-  .footer i {
+  footer i {
     position: relative;
     top: 23px;
     right: 10px; }
-  .footer .bot--part {
+  footer .bot--part {
     padding: 10px;
-    background-color: #2b2b2b; }
-  .footer .bot-footer-font-1 {
+    background-color: #333434; }
+  footer .bot-footer-font-1 {
     color: #9a9a9a;
     margin: 0px; }
-  .footer .bot-footer-font-2 {
+  footer .bot-footer-font-2 {
     display: inline-block;
     color: #9a9a9a;
     margin: 0px;
     border-left: 1px solid #9a9a9a;
     padding-left: 4px; }
-  .footer .photo-face {
+  footer .photo-face {
     position: relative;
     left: 4px;
     top: 0px; }
-  .footer .wrapper_b {
+  footer .wrapper_b {
     align-content: center;
     text-align: center; }
 

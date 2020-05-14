@@ -9,6 +9,7 @@ import './css/main.css'
 import Header from "./components/Header/Header"
 import CarListStart from "./components/CarList/CarListStart"
 import CarList from "./components/CarList/CarList"
+import Footer from "./components/Footer/Footer"
 import About from "./components/About/About"
 import EditProfile from "./components/Profile/EditProfile/EditProfile"
 import ShowProfile from "./components/Profile/ShowProfile/ShowProfile"
@@ -98,3 +99,4 @@ function App() {
 	);
 }
 export default withRouter(App);
+
