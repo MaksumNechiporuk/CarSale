@@ -18,14 +18,13 @@ class CarListStart extends Component {
 		this.props.GetrequestCarList(1, 6);
 	}
 	render() {
-		console.log(this.props);
 		const singleItem = this.props.carList.carList.map(item => {
 			let path = "/CarPost/" + item.id;
 			return (
-				<Link to={path} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
+				<Link to={path} key={item.id} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
 					<CarItem
 						id={item.id}
-						key={item.id}
+						
 						name={item.name}
 						state={item.state}
 						year={item.date}

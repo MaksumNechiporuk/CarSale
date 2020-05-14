@@ -22,13 +22,15 @@ namespace CarSale.Entities
         public string Name { get; set; }
 
         [Required]
-        public Decimal Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int Mileage { get; set; }
         [Required]
         public string State { get; set; }
         public virtual ICollection<Filter> Filtres { get; set; }
         public virtual ICollection<UserCar> UserCar { get; set; }
+        public virtual ICollection<FilterMake> FilterMakes { get; set; }
+
 
     }
 }
