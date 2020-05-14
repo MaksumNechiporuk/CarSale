@@ -1,133 +1,130 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component, Fragment } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { actionCreators } from "../../store/Actions/CarActions";
+import { Link } from "react-router-dom";
+import CarItem from "./CarItem/CarItem"
+import ReactPaginate from 'react-paginate';
+import { ProgressSpinner } from 'primereact/progressspinner';
+import { Redirect } from "react-router-dom";
+import NotFound from "../NotFound/NotFound"
 class CarList extends Component {
-   
-    render() {
-        return (
-            <div className="listCar">
-                <div className="container">
-                    <div className="row" id="ads">
-                        <div className="col-xl-4 col-sm-12 col-md-6 ">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Low KMS</span>
-                                    <span className="card-notify-year">2018</span>
-                                    <img className="img-fluid " src="https://cdn3.riastatic.com/photosnew/auto/photo/volkswagen_passat-b8__318990543fx.webp" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$28,000.00</span>
-                                    <span className="card-detail-badge">13000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda Accord LX</h5>
-                                    </div>
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentPage: this.props.match.params.page,
+			first: 1,
+			loading: true
+		};
+		this.handleChange = this.handleChange.bind(this);
+		this.myRef = React.createRef()
+	}
+	componentDidMount() {
 
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-sm-12 col-md-6">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Fully-Loaded</span>
-                                    <span className="card-notify-year">2017</span>
-                                    <img className="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=CAC80HOC021B121001.jpg&width=440&height=262" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$28,000.00</span>
-                                    <span className="card-detail-badge">13000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda CIVIC HATCHBACK LS</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-sm-12 col-md-6">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Price Reduced</span>
-                                    <span className="card-notify-year">2018</span>
-                                    <img className="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC091A021001.jpg&width=440&height=262" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$22,000.00</span>
-                                    <span className="card-detail-badge">8000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda Accord Hybrid LT</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-sm-12 col-md-6">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Low KMS</span>
-                                    <span className="card-notify-year">2018</span>
-                                    <img className="img-fluid " src="https://cdn3.riastatic.com/photosnew/auto/photo/volkswagen_passat-b8__318990543fx.webp" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$28,000.00</span>
-                                    <span className="card-detail-badge">13000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda Accord LX</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-sm-12 col-md-6">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Fully-Loaded</span>
-                                    <span className="card-notify-year">2017</span>
-                                    <img className="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=CAC80HOC021B121001.jpg&width=440&height=262" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$28,000.00</span>
-                                    <span className="card-detail-badge">13000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda CIVIC HATCHBACK LS</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-sm-12 col-md-6">
-                            <div className="card rounded">
-                                <div className="card-image">
-                                    <span className="card-notify-badge">Price Reduced</span>
-                                    <span className="card-notify-year">2018</span>
-                                    <img className="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC091A021001.jpg&width=440&height=262" alt="Alternate Text" />
-                                </div>
-                                <div className="card-image-overlay m-auto">
-                                    <span className="card-detail-badge">Used</span>
-                                    <span className="card-detail-badge">$22,000.00</span>
-                                    <span className="card-detail-badge">8000 Kms</span>
-                                </div>
-                                <div className="card-body text-center">
-                                    <div className="m-auto">
-                                        <h5>Honda Accord Hybrid LT</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+		this.ensureDataFetched();
 
-                    </div>
-                </div>
-            </div>
+	}
+	async	ensureDataFetched() {
+		console.log("filters", this.props);
+		await this.props.GetrequestCarList(this.state.currentPage, 9, this.props.selectFilters, this.props.selectMake, this.props.maxPrice, this.props.minPrice);
+		this.setState({
+			loading: false
+		});
+	}
+	handleChange(event: object) {
+		const selectedPage = event.selected;
+		console.log(selectedPage);
+		this.setState({
+			currentPage: selectedPage + 1,
+			loading: true
+		}, async () => {
+			await this.ensureDataFetched()
+			this.setState({
+				loading: false
+			});
+		});
+		window.scrollTo(0, this.myRef.current.offsetTop)
+		let path = `/Cars/${selectedPage + 1}`;
+		this.props.history.push(path);
+	}
+	RenderRedirect() {
+		return <Redirect to="/" />;
 
-        );
-    }
+	}
+	render() {
+		let { totalPage } = this.props.carList;
+		let { loading, currentPage } = this.state;
+
+		const singleItem = this.props.carList.carList.map(item => {
+			let path = "/CarPost/" + item.id;
+			return (
+				<Link to={path} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
+					<CarItem
+						id={item.id}
+						key={item.id}
+						name={item.name}
+						state={item.state}
+						year={item.date}
+						img={item.image}
+						price={item.price}
+						mileage={item.mileage}
+					/>
+				</Link>
+			);
+		});
+		//console.log("this.props.carList.carList.lenght == 0", this.props.carList.carList.length);
+
+		if (this.props.carList.carList.length == 0)
+			console.log("this.props.carList.carList.lenght == 0");
+		return (
+			this.props.carList.carList.length == 0 ? <h2 className="NotFoundCar">Car Could Not Be Found!</h2> :
+		
+			loading ? <div className="d-flex "> <ProgressSpinner /></div> :
+
+				<Fragment>
+					<div className="listCar">
+						<div className="container">
+
+							<div className="row" ref={this.myRef} id="ads">
+								{singleItem}
+							</div>
+						</div>
+					</div>
+					<div className="container" >
+						<ReactPaginate
+							forcePage={this.props.match.params.page - 1}
+							previousLabel={"<<"}
+							nextLabel={">>"}
+							breakLabel={"..."}
+							breakClassName={"break-me"}
+							pageCount={totalPage}
+							marginPagesDisplayed={3}
+							pageRangeDisplayed={3}
+							onPageChange={this.handleChange}
+							containerClassName={"pagination "}
+							subContainerClassName={"pages"}
+							activeClassName={"current"} />
+					</div>
+				</Fragment >
+		);
+	}
 }
+const mapStateToProps = state => {
+	return {
+		carList: state.carList,
+		totalPage: state.totalPage,
+		selectFilters: state.carList.selectFilters,
+		selectMake: state.carList.selectMake,
+		maxPrice: state.carList.maxPrice,
+		minPrice: state.carList.minPrice
+	};
+};
 
-export default CarList;
+const mapDispatchToProps = dispatch => {
+	const { GetrequestCarList } = bindActionCreators(actionCreators, dispatch);
+	return {
+		GetrequestCarList
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarList);

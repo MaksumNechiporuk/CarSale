@@ -1,201 +1,240 @@
 .navbar-menu {
-  background-color: $bgc--color-primary_2;
+    background-color: $bgc--color-primary_2;
 
-  .home-icon {
-    color: $btn--color-primary_1;
-    a {
-      text-decoration: none;
-    }
-  }
-  .navbar-pc {
-    margin: 10px;
-  }
-  .nav-item {
-    @include font(16px, $font-sansbold, $font--color-primary_2, 100);
-    text-transform: uppercase;
-    padding: 0px 9px;
-    border-left: 1px solid white;
-  }
-  .nav-item:hover {
-    background-color: $btn--color-primary_5_hover;
-  }
-  .nav_active {
-    background-color: $btn--color-primary_5_hover;
-  }
-  @media screen and (max-width: 1200px) {
-    .nav-item {
-      @include font(12px, $font-sansbold, $font--color-primary_2, 100);
-    }
     .home-icon {
-      font-size: 12px;
+        color: $btn--color-primary_1;
+
+        a {
+            text-decoration: none;
+        }
     }
-  }
-  ul {
-    list-style: none;
-    padding: 0px;
-  }
-  li {
-    display: inline-block;
-    text-align: center;
-    margin-right: 1px;
-  }
-  a {
-    text-decoration: none;
-  }
+
+    .row {
+        flex-flow: column
+    }
+
+    .navbar-pc {
+        margin: 10px;
+    }
+
+    .nav-item {
+        @include font(16px, $font-sansbold, $font--color-primary_2, 100);
+        text-transform: uppercase;
+        padding: 0px 9px;
+        border-left: 1px solid white;
+    }
+
+    .nav-item:hover {
+        background-color: $btn--color-primary_5_hover;
+    }
+
+    .nav_active {
+        background-color: $btn--color-primary_5_hover;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .nav-item {
+            @include font(12px, $font-sansbold, $font--color-primary_2, 100);
+        }
+
+        .home-icon {
+            font-size: 12px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px;
+    }
+
+    li {
+        display: inline-block;
+        text-align: center;
+        margin-right: 1px;
+    }
+
+    a {
+        text-decoration: none;
+    }
 }
 
 .phone-burger {
-  height: 45px;
-  z-index: 1;
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+    height: 45px;
+    z-index: 1;
 
-  .wrapper {
-    width: 320px;
-    color: white;
-    text-align: center;
-    height: 40px;
-    font-family: "Arial";
-  }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-  #check-menu {
-    display: none;
-  }
+    .wrapper {
+        width: 320px;
+        color: white;
+        text-align: center;
+        height: 40px;
+        font-family: "Arial";
+    }
 
-  label {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 2;
-    line-height: 40px;
-  }
+    #check-menu {
+        display: none;
+    }
 
-  .burger-line {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    width: 35px;
-    height: 2px;
-    background-color: #fff;
-    transition: 0.5s all;
-  }
+    label {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 2;
+        line-height: 40px;
+    }
 
-  .second,
-  .third {
-    top: 18px;
-  }
+    .burger-line {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        width: 35px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.5s all;
+    }
 
-  .fourth {
-    top: 28px;
-  }
+    .second,
+    .third {
+        top: 18px;
+    }
 
-  .main-menu {
-    display: block;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    transform: translateY(100%);
-    max-height: 0;
-    font-size: 0;
-    overflow: hidden;
-    transition: 0.5s all;
-  }
+    .fourth {
+        top: 28px;
+    }
 
-  a {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: $btn--color-primary_1;
-  }
+    .main-menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        max-height: 0;
+        font-size: 0;
+        overflow: hidden;
+        transition: 0.5s all;
+    }
 
-  a:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
+    a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: $btn--color-primary_1;
+    }
 
-  #check-menu:checked ~ .main-menu {
-    max-height: 500px;
-    font-size: 16px;
-  }
+    a:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 
-  #check-menu:checked ~ .first {
-    display: none;
-  }
+    #check-menu:checked ~ .main-menu {
+        max-height: 500px;
+        font-size: 16px;
+    }
 
-  #check-menu:checked ~ .second {
-    transform: rotate(45deg);
-  }
+    #check-menu:checked ~ .first {
+        display: none;
+    }
 
-  #check-menu:checked ~ .third {
-    transform: rotate(-45deg);
-  }
+    #check-menu:checked ~ .second {
+        transform: rotate(45deg);
+    }
 
-  #check-menu:checked ~ .fourth {
-    display: none;
-  }
+    #check-menu:checked ~ .third {
+        transform: rotate(-45deg);
+    }
+
+    #check-menu:checked ~ .fourth {
+        display: none;
+    }
 }
 
 .header-search {
-  background-image: url(../img/back-car.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*   height: 484px; */
-  width: 100%;
-  padding: 0px;
-  .search-part {
-    background-color: $bgc--color-primary_4;
-    z-index: 0;
-    /*     height: 484px; */
-  }
-  .header-text {
-    @include font(24px, $font-sansbold, $font--color-primary_3, 100);
-    text-transform: uppercase;
-    padding: 20px 0;
-  }
-  h2 {
-    margin: 0px;
-    text-align: center;
-    padding-top: 20px;
-  }
-  .pre-owned-form {
-    display: inline-block;
-  }
-  .select-group {
-    text-align: justify;
-    padding: 0 25px;
-  }
-  .select-item {
-    width: 45%;
-    margin: 10px 0;
-    border-radius: 5px;
-    height: 25px;
-    font-family: $font-sanssemibold;
-    color: $font--color-primary_1;
-  }
-  .buttons-group {
-    /*     position: relative; */
-    padding-top: 20px;
-    display: flex;
-    top: 130px;
-  }
-  @media screen and (max-width: 1200px) {
-    .header-text {
-      font-size: 18px;
-    }
-  }
-  @media screen and (max-width: 767px) {
+    background-image: url(../img/back-car.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*   height: 484px; */
+    width: 100%;
+    padding: 0px;
+
     .search-part {
-      width: 100%;
+        background-color: $bgc--color-primary_4;
+        z-index: 0;
+        /*     height: 484px; */
     }
-  }
+
+    .header-text {
+        @include font(24px, $font-sansbold, $font--color-primary_3, 100);
+        text-transform: uppercase;
+        padding: 20px 0;
+    }
+
+    h2 {
+        margin: 0px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .pre-owned-form {
+    }
+
+    .select-group {
+        padding: 0 25px;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+
+    .select-item {
+        width: 45%;
+        margin: 10px 0;
+        border-radius: 5px;
+        height: 25px;
+        font-family: $font-sanssemibold;
+        color: $font--color-primary_1;
+    }
+
+    .price-item {
+        width: 45%;
+        margin: 5px 0;
+        border-radius: 5px;
+        height: 25px;
+        font-family: $font-sanssemibold;
+        color: $font--color-primary_6;
+
+        ::-webkit-input-placeholder {
+            color: black;
+            opacity: .5;
+        }
+    }
+
+    .buttons-group {
+        /*     position: relative; */
+        padding-top: 20px;
+        display: flex;
+        top: 130px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .header-text {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .search-part {
+            width: 100%;
+        }
+    }
 }
