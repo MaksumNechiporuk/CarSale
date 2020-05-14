@@ -7,7 +7,7 @@ import CarItem from "./CarItem/CarItem"
 import ReactPaginate from 'react-paginate';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { Redirect } from "react-router-dom";
-
+import NotFound from "../NotFound/NotFound"
 class CarList extends Component {
 	constructor(props) {
 		super(props);
@@ -72,7 +72,13 @@ class CarList extends Component {
 				</Link>
 			);
 		});
+		//console.log("this.props.carList.carList.lenght == 0", this.props.carList.carList.length);
+
+		if (this.props.carList.carList.length == 0)
+			console.log("this.props.carList.carList.lenght == 0");
 		return (
+			this.props.carList.carList.length == 0 ? <h2 className="NotFoundCar">Car Could Not Be Found!</h2> :
+		
 			loading ? <div className="d-flex "> <ProgressSpinner /></div> :
 
 				<Fragment>

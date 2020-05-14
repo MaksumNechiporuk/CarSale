@@ -8,7 +8,8 @@ const initialState = {
 	stateCar: [],
 	color: [],
 	fuel: [],
-	typeOfCar:[]
+	typeOfCar: [],
+	filters: []
 
 };
 
@@ -49,6 +50,12 @@ export const reducer = (state, action) => {
 
 		})
 	}
+	if (action.type === "SetFilters") {
+		return Object.assign({}, state, {
+			filters: action.filters
 
+		})
+	}
+	
 	return state;
 };

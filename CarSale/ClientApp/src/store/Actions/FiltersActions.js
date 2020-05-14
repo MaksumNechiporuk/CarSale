@@ -51,5 +51,18 @@ export const actionCreators = {
 		}
 		return;
 
+	},
+	GetAdvancedFilters: () => async (dispatch) => {
+		const url = `api/Filters`;
+		let filters;
+		await axios
+			.get(url)
+			.then(response =>
+				filters = response.data);
+		console.log(filters);
+		dispatch({ type: "SetFilters", filters }); 
+		
+		return;
+
 	}
 };

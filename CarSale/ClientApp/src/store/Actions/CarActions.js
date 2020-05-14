@@ -45,7 +45,6 @@ export const actionCreators = {
 		return;
 
 	},
-
 	CarsByFilter: value => async (dispatch) => {
 		const url = `api/Filters/CarsByFilter`;
 		let cars;
@@ -62,6 +61,20 @@ export const actionCreators = {
 			.then(response =>
 				cars = response.data);
 		dispatch({ type: "CarsByFilter", cars });
+		return;
+
+	},
+	AddNewCar: (model) => async (dispatch) => {
+		const url = `api/Car/CreateNewCar`;
+		//  , filters: filters, makeId: makeId, modelId: modelId
+
+
+		await axios
+			.post(url, model)
+			.then(response =>
+				response.data);
+			dispatch({ type: "CarsByFilter" });
+
 		return;
 
 	},

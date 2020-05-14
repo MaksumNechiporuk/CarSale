@@ -60,13 +60,15 @@ namespace CarSale.Controllers
         public IActionResult FilterData()
         {
             var filters = FiltersHelpers.GetListFilters(_context);
-
+            filters.RemoveAt(filters.IndexOf(filters.Where((p) => p.Name == "Model").FirstOrDefault()));
             return Ok(filters);
         }
         [HttpGet("GetFiltersByName")]
         public IActionResult GetFiltersByName(string name)
         {
             var filters = GetListFilters(_context, name);
+
+
             return Ok(filters);
         }
         [HttpGet("GetMakeByModels")]
