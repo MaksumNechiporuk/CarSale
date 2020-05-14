@@ -62,8 +62,7 @@ namespace CarSale.Entities
                          City = "Nine Mile",
                          Img = "https://img.icons8.com/officel/2x/user.png",
                          UserName="Bob@gmail.com",
-                                                PhoneNumber="380986664228"
-
+                         PhoneNumber="380986664228"
                      },
                        new AppUser
                        {
@@ -74,8 +73,7 @@ namespace CarSale.Entities
                            Img = "https://img.icons8.com/officel/2x/user.png",
                            Email="Jon@gmail.com",
                            UserName="Jon@gmail.com",
-                                                  PhoneNumber="384486654128"
-
+                           PhoneNumber="384486654128"
                        },
                          new AppUser
                          {
@@ -776,15 +774,13 @@ namespace CarSale.Entities
                         if (!Directory.Exists(path))
                         {
                             Directory.CreateDirectory(path);
-
                         }
                         item.car.UniqueName = item.carName;
                         context.Cars.Add(item.car);
                         context.SaveChanges();
                     }
                     i++;
-                    //if (i == 4)
-                    //    break;
+
                 }
             }
             #endregion

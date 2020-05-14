@@ -35,3 +35,54 @@ p {
 ul {
     list-style: none;
 }
+.year-picker {
+    width: 90%;
+    margin: 10px 45px;
+    border-radius: 5px;
+    height: 35px;
+    font-family: $font-sanssemibold;
+    color: $font--color-primary_1;
+
+    ::-webkit-input-placeholder {
+        color: black;
+        opacity: .5;
+    }
+
+    padding: 0 0;
+}
+
+.select-item {
+    width: 90%;
+    margin: 10px 45px;
+    border-radius: 5px;
+    height: 35px;
+    font-family: $font-sanssemibold;
+    color: $font--color-primary_1;
+
+    ::-webkit-input-placeholder {
+        color: black;
+        opacity: .5;
+    }
+
+    padding: 0 0;
+}
+.AdvancedSearch {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+
+    h2 {
+        @include font( 32px, $font-sansbold, $font--color-primary_6, 600 );
+    }
+}
+.SearchContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.NotFoundCar {
+    @include font( 32px, $font-sansbold, $font--color-primary_6, 600 );
+    margin-top:20px;
+}

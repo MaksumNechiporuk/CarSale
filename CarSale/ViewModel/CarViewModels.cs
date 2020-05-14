@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -83,21 +84,17 @@ namespace CarSale.ViewModels
 
     public class CarAddVM
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
+
         public string Date { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public string MainImage { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public List<string> AdditionalImage { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
         public double Price { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public int Count { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
         public string UniqueName { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
         public string Name { get; set; }
+        public string State { get; set; }
+        public int Mileage { get; set; }
+        public int[] Filters { get; set; }
+        public int MakeId { get; set; }
+        public int ModelId { get; set; }
+
     }
     public class CarDeleteVM
     {

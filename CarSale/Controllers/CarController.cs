@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using CarSale.Entities;
 using CarSale.Helpers;
@@ -18,7 +20,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using ShopCarApi.Helpers;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace CarSale.Controllers
 {
@@ -47,18 +51,25 @@ namespace CarSale.Controllers
         [HttpGet("OwnerByCarId")]
         public ShowUserViewModel OwnerByCarId(int id)
         {
-            var query = _context.userCars.SingleOrDefault((car) => car.CarId == id);
-            var user = _context.Users.SingleOrDefault((u) => u.Id == query.UserId);
-            var showUser = new ShowUserViewModel()
+            try
             {
-                City = user.City,
-                Country = user.Country,
-                Email = user.Email,
-                Img = user.Img,
-                Name = user.Name + " " + user.Surname,
-                Phone = user.PhoneNumber
-            };
-            return showUser;
+                var query = _context.userCars.SingleOrDefault((car) => car.CarId == id);
+                var user = _context.Users.SingleOrDefault((u) => u.Id == query.UserId);
+                var showUser = new ShowUserViewModel()
+                {
+                    City = user.City,
+                    Country = user.Country,
+                    Email = user.Email,
+                    Img = user.Img,
+                    Name = user.Name + " " + user.Surname,
+                    Phone = user.PhoneNumber
+                };
+                return showUser;
+            }
+            catch
+            {
+                return null;
+            }
         }
         [HttpGet("CarsById")]
         public IActionResult CarsById(int id)
@@ -243,85 +254,85 @@ namespace CarSale.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody]CarAddVM model)
+        [HttpPost("CreateNewCar")]
+        public IActionResult CreateNewCar([FromBody] CarAddVM model /*int[] filters, int makeId, int modelId*/)
         {
             if (!ModelState.IsValid)
             {
                 var errors = CustomValidator.GetErrorsByModel(ModelState);
                 return BadRequest(errors);
             }
-            string dirName = "images";
-            string dirPathSave = Path.Combine(dirName, model.UniqueName);
-            if (!Directory.Exists(dirPathSave))
-            {
-                Directory.CreateDirectory(dirPathSave);
-            }
-            var bmp = model.MainImage.FromBase64StringToImage();
-            var imageName = model.UniqueName;
-            string fileSave = Path.Combine(dirPathSave, $"{imageName}");
-
-            var bmpOrigin = new System.Drawing.Bitmap(bmp);
-            string[] imageNames = {$"50_"+ imageName + ".jpg" ,
-                    $"100_" + imageName + ".jpg",
-                     $"300_" + imageName + ".jpg",
-                   $"600_" + imageName + ".jpg",
-                    $"1280_"+ imageName + ".jpg"};
-
-            Bitmap[] imageSave = { ImageWorker.CreateImage(bmpOrigin, 50, 50),
-                    ImageWorker.CreateImage(bmpOrigin, 100, 100),
-                    ImageWorker.CreateImage(bmpOrigin, 300, 300),
-                    ImageWorker.CreateImage(bmpOrigin, 600, 600),
-                    ImageWorker.CreateImage(bmpOrigin, 1280, 1280)};
-
-            for (int i = 0; i < imageNames.Count(); i++)
-            {
-                var imageSaveEnd = System.IO.Path.Combine(dirPathSave, imageNames[i]);
-                imageSave[i].Save(imageSaveEnd, System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-
-            dirPathSave = Path.Combine(dirName, model.UniqueName, "Photo");
-            if (!Directory.Exists(dirPathSave))
-            {
-                Directory.CreateDirectory(dirPathSave);
-            }
-            for (int i = 0; i < model.AdditionalImage.Count; i++)
-            {
-                bmp = model.AdditionalImage[i].FromBase64StringToImage();
-                fileSave = Path.Combine(dirPathSave);
-
-                bmpOrigin = new System.Drawing.Bitmap(bmp);
-                string[] imageNamess = {$"50_{i+1}_"+ imageName + ".jpg" ,
-                    $"100_{i+1}_" + imageName + ".jpg",
-                     $"300_{i+1}_" + imageName + ".jpg",
-                   $"600_{i+1}_" + imageName + ".jpg",
-                    $"1280_{i+1}_"+ imageName + ".jpg"};
-
-                Bitmap[] imageSaves = { ImageWorker.CreateImage(bmpOrigin, 50, 50),
-                    ImageWorker.CreateImage(bmpOrigin, 100, 100),
-                    ImageWorker.CreateImage(bmpOrigin, 300, 300),
-                    ImageWorker.CreateImage(bmpOrigin, 600, 600),
-                    ImageWorker.CreateImage(bmpOrigin, 1280, 1280)};
-
-                for (int j = 0; j < imageNamess.Count(); j++)
-                {
-                    var imageSaveEnd = System.IO.Path.Combine(dirPathSave, imageNamess[j]);
-                    imageSaves[j].Save(imageSaveEnd, System.Drawing.Imaging.ImageFormat.Jpeg);
-                }
-            }
             var cars = _context.Cars.SingleOrDefault(p => p.UniqueName == model.UniqueName);
             if (cars == null)
             {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images", model.UniqueName);
+                string state;
+                var carModel_name = _context.FilterValues.Where((f) => f.Id == model.ModelId).SingleOrDefault();
+                var carMake_name = _context.Makes.Where((f) => f.Id == model.MakeId).SingleOrDefault();
+
+                if (model.Mileage == 0)
+                {
+                    state = "New";
+                }
+                else
+                {
+                    state = "Used";
+                }
                 Car car = new Car
                 {
-                    UniqueName = model.UniqueName,
                     Date = model.Date,
-                    Name = model.Name,
-                    Price = model.Price
+                    Name = carMake_name.Name + " " + carModel_name.Name,
+                    Price = model.Price,
+                    UniqueName = model.UniqueName,
+                    Mileage = model.Mileage,
+                    State = state
                 };
+
                 _context.Cars.Add(car);
                 _context.SaveChanges();
-                return Ok(car.Id);
+                var newCar = _context.Cars.Where((p) => p.UniqueName == model.UniqueName).SingleOrDefault();
+                List<FilterNameGroup> l = new List<FilterNameGroup>();
+                foreach (var item in model.Filters)
+                {
+                    l.Add(_context.FilterNameGroups.Where(p => p.FilterValueId == item).SingleOrDefault());
+                }
+                foreach (var item in l)
+                {
+                    Filter filter = new Filter { CarId = newCar.Id, FilterNameId = item.FilterNameId, FilterValueId = item.FilterValueId };
+                    var f = _context.Filters.SingleOrDefault(p => p == filter);
+                    if (f == null)
+                    {
+                        _context.Filters.Add(filter);
+                        _context.SaveChanges();
+                    }
+                }
+                _context.filterMakes.Add(new FilterMake { CarId = newCar.Id, MakeNameId = model.MakeId });
+                _context.SaveChanges();
+
+                if (!Directory.Exists(filePath))
+                {
+                    string[] files = System.IO.Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images"));
+                    Directory.CreateDirectory(filePath);
+                    int i = 0;
+                    foreach (string s in files)
+                    {
+                        string fileName;
+                        if (i == 0)
+                        {
+                            fileName = model.UniqueName;
+                        }
+                        else
+                        {
+                            fileName = System.IO.Path.GetFileName(s);
+                        }
+                        var destFile = System.IO.Path.Combine(filePath, fileName + ".jpg");
+                        System.IO.File.Copy(s, destFile, true);
+                        i++;
+                    }
+                }
+                // _context.userCars.Add(new UserCar { CarId = newCar.Id,UserOf=_context.Users[0]. })
+
+                return Ok();
             }
             return BadRequest(new { name = "Даний автомобіль вже добалений" });
         }
@@ -445,6 +456,45 @@ namespace CarSale.Controllers
             }
             return BadRequest();
 
+        }
+        private async static void UploadFile(IFormFile file)
+        {
+            string path = "/wwwrot/images";
+
+            var uploads = Path.Combine(path);
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images", file.FileName);
+
+            if (file.Length > 0)
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+
+                    await file.CopyToAsync(fileStream);
+
+                }
+            }
+
+            FileInfo File = new FileInfo(filePath);
+
+            File.MoveTo(Path.ChangeExtension(filePath, ".jpg"));
+
+        }
+        [HttpPost("Images")]
+        public dynamic Images(IFormCollection form)
+        {
+            try
+            {
+                foreach (var file in form.Files)
+                {
+                    UploadFile(file);
+
+                }
+                return new { Success = true };
+            }
+            catch (Exception ex)
+            {
+                return new { Success = false, ex.Message };
+            }
         }
     }
 }
