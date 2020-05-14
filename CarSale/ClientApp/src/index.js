@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router';
+
 import { ConnectedRouter } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 import configureStore from './store/configureStore';
@@ -9,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Dialog } from 'primereact/dialog';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { BrowserRouter } from "react-router-dom";
+import NotFound from "./components/NotFound/NotFound"
 
 // Create browser history to use in the Redux store
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
@@ -22,10 +25,13 @@ const rootElement = document.getElementById('root');
 
 ReactDOM.render(
 	<Provider store={store}>
-		<BrowserRouter>
-			
-			<App />
-		
+		<BrowserRouter>	
+			<Route path="/" component={App}>
+
+				
+
+				</Route>
+
 		</BrowserRouter>
 		
 	</Provider>,

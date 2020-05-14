@@ -8,8 +8,9 @@
             text-decoration: none;
         }
     }
-    .row{
-        flex-flow:column
+
+    .row {
+        flex-flow: column
     }
 
     .navbar-pc {
@@ -202,6 +203,20 @@
         height: 25px;
         font-family: $font-sanssemibold;
         color: $font--color-primary_1;
+    }
+
+    .price-item {
+        width: 45%;
+        margin: 5px 0;
+        border-radius: 5px;
+        height: 25px;
+        font-family: $font-sanssemibold;
+        color: $font--color-primary_6;
+
+        ::-webkit-input-placeholder {
+            color: black;
+            opacity: .5;
+        }
     }
 
     .buttons-group {

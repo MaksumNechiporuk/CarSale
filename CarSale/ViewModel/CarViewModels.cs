@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace CarSale.ViewModels
         public int Id { get; set; }
         public string Date { get; set; }
         public string Image { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
 
@@ -53,7 +54,7 @@ namespace CarSale.ViewModels
         public int Id { get; set; }
         public string Date { get; set; }
         public List<string> Image { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
         public List<FNameGetViewModel> filters { get; set; }
@@ -64,7 +65,7 @@ namespace CarSale.ViewModels
         public string Date { get; set; }
         public string MainImage { get; set; }
         public List<string> AdditionalImage { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public int Count { get; set; }
         public string UniqueName { get; set; }
         public string Name { get; set; }
@@ -73,7 +74,7 @@ namespace CarSale.ViewModels
     public class CarsByFilterVM
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string Image { get; set; }
 
         public string UniqueName { get; set; }
@@ -83,21 +84,17 @@ namespace CarSale.ViewModels
 
     public class CarAddVM
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
+
         public string Date { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public string MainImage { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public List<string> AdditionalImage { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public decimal Price { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
-        public int Count { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
+        public double Price { get; set; }
         public string UniqueName { get; set; }
-        [Required(ErrorMessage = "Поле не може бути пустим")]
         public string Name { get; set; }
+        public string State { get; set; }
+        public int Mileage { get; set; }
+        public int[] Filters { get; set; }
+        public int MakeId { get; set; }
+        public int ModelId { get; set; }
+
     }
     public class CarDeleteVM
     {

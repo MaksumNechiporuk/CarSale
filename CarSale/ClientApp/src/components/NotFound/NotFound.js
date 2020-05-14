@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-const NotFound = () => {
+const NotFound = ({notfound }) => {
 
 
     return (
@@ -27,9 +27,12 @@ const NotFound = () => {
                                     <div className="im-leg"></div>
                                 </div>
                             </div>
-                            <h4>Oops! This page Could Not Be Found!</h4>
-                            <p>Sorry bit the page you are looking for does not exist, have been removed or name changed.</p>
-                            <a href="<?=base_url()?>" className="btn btn-primary btn-round">Go to homepage</a>
+                          
+                                   <div>
+                                <h4>Oops! This page Could Not Be Found!</h4>
+                                <p>Sorry bit the page you are looking for does not exist, have been removed or name changed.</p>
+                                <a href="<?=base_url()?>" className="btn btn-primary btn-round">Go to homepage</a>
+                            </div>
                         </div>
                     </div>
                 </div>
