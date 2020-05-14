@@ -15,11 +15,14 @@ import EditProfile from "./components/Profile/EditProfile/EditProfile"
 import ShowProfile from "./components/Profile/ShowProfile/ShowProfile"
 import NotFound from "./components/NotFound/NotFound"
 import CarPost from "./components/CarList/CarItem/CarPost/CarPost"
+import Registration from "./components/Registration/Registration"
+import Login from "./components/Login/Login"
 import AdminPanel from "./components/AdminPanel/AdminPanel"
 import Filters from "./components/AdminPanel/Filters/Filters"
 import InProgress from "./components/AdminPanel/InProgress/InProgress"
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch"
 import AddCar from './components/AddCar/AddCar';
+
 
 function App() {
 	return (
@@ -43,7 +46,21 @@ function App() {
 						<About />
 					</Fragment>
 				)}
-			/>
+            />
+            <Route
+                path="/Registration"
+                exact
+                render={(props) => (
+                    <Registration {...props} />
+                )}
+            />
+            <Route
+                path="/Login"
+                exact
+                render={(props) => (
+                    <Login {...props} />
+                )}
+            />
 			<Route
 				path="/Cars/:page"
 
@@ -79,7 +96,7 @@ function App() {
 				render={(props) => (
 					<CarPost {...props} />
 				)}
-
+            />
 			/>	
 			<Route
 				path="/AdvancedSearch"

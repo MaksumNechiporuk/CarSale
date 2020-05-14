@@ -4,13 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Entities.Models
 {
-
-
     public class AppUser : IdentityUser
     {
-
-
-
         [Required]
         public string Name { get; set; }
 
@@ -19,8 +14,10 @@ namespace Entities.Models
 
         [Required]
         public string Country { get; set; }
+
         [Required]
         public string City { get; set; }
+
         public string Img { get; set; }
         public virtual ICollection<UserCar> UserCar { get; set; }
 

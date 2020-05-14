@@ -78,6 +78,8 @@
     @include font(14px, $font-sansbold, $font--color-primary_2, 400);
     text-transform: uppercase;
     cursor: pointer;
+    text-decoration:none;
+    
 }
 
 .btn_register:hover {
