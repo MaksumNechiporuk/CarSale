@@ -72,7 +72,7 @@ namespace CarSale
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
 
-
+                    //spa.UseReactDevelopmentServer(npmScript: "start --host 0.0.0.0:3000");
 
                     // spa.UseReactDevelopmentServer(npmScript: "start --host 0.0.0.0:3000");
 
