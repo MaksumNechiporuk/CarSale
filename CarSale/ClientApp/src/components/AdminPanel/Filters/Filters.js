@@ -2,8 +2,9 @@
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { actionCreators } from "../../../store/Actions/AdminActions";
+import { withRouter } from "react-router";
 
-const Filters = ({ AddFilter }) => {
+const Filters = ({ AddFilter, history }) => {
 
    
 
@@ -32,6 +33,10 @@ const Filters = ({ AddFilter }) => {
             name: data.get("name"), values: value
         };
         AddFilter(send_data);
+
+        let path = `/`;
+        history.push(path);		
+
     };
 
   const handleAddFields = () => {
@@ -119,6 +124,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Filters);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Filters));

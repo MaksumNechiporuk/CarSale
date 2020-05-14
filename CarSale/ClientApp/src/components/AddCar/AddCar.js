@@ -112,7 +112,7 @@ class AddCar extends Component {
 			return options;
 		}
 	}
-	onSubmit = event => {
+	onSubmit  =  event =>  {
 
 		event.preventDefault();
 		console.log(this.state);
@@ -136,9 +136,11 @@ class AddCar extends Component {
 			Filters: filters, MakeId:  this.state.make[0], ModelId: this.state.model[0]
 		}
 		console.log(new_car);
-		this.props.AddNewCar(new_car);
-		//let path = `/Cars/1`;
-		//this.props.history.push(path);
+		async () => {
+		await	this.props.AddNewCar(new_car);
+
+		}
+		let path = `/`; this.props.history.push(path);
 	};
 
 	render() {
@@ -176,6 +178,8 @@ class AddCar extends Component {
 			this.state.loading ? <div className="d-flex "> <ProgressSpinner /></div> :
 
 				<div class="container">
+					<AddImage />
+
 					<form onSubmit={this.onSubmit} className="col-sm-12 col-xs-12 AdvancedSearch"  >
 
 
@@ -194,13 +198,12 @@ class AddCar extends Component {
 
 						</div>
 						<div className="SearchContent">
-							<Button type="submit" label="Search" className="p-button-raised p-button-rounded" />
+							<Button type="submit" label="Add" className="p-button-raised p-button-rounded" />
 
 						</div>
 
 					</form>
 
-					<AddImage />
 				</div>
 
 		);
@@ -211,15 +214,12 @@ const mapStateToProps = state => {
 		filters: state.filters.filters,
 		makes: state.filters.makes,
 		models: state.filters.models,
-
-
-
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	const { GetAdvancedFilters, GetRequestMakes, GetModelsByMakes, GetFiltersByName } = bindActionCreators(actionCreators, dispatch);
-	const { GetrequestCarList, AddNewCar } = bindActionCreators(carActions, dispatch);
+	const { GetrequestCarList, AddNewCar } = bindActionCreators(carActions, dispatch)
 
 	return {
 		GetAdvancedFilters,
@@ -228,7 +228,6 @@ const mapDispatchToProps = dispatch => {
 		GetModelsByMakes,
 		GetFiltersByName,
 		AddNewCar
-
 	};
 };
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddCar));

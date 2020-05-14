@@ -54,24 +54,26 @@ class CarList extends Component {
 	render() {
 		let { totalPage } = this.props.carList;
 		let { loading, currentPage } = this.state;
-
-		const singleItem = this.props.carList.carList.map(item => {
-			let path = "/CarPost/" + item.id;
-			return (
-				<Link to={path} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
-					<CarItem
-						id={item.id}
-						key={item.id}
-						name={item.name}
-						state={item.state}
-						year={item.date}
-						img={item.image}
-						price={item.price}
-						mileage={item.mileage}
-					/>
-				</Link>
-			);
-		});
+		let singleItem=null;
+		if (this.props.carList.carList) {
+			singleItem = this.props.carList.carList.map(item => {
+				let path = "/CarPost/" + item.id;
+				return (
+					<Link to={path} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
+						<CarItem
+							id={item.id}
+							key={item.id}
+							name={item.name}
+							state={item.state}
+							year={item.date}
+							img={item.image}
+							price={item.price}
+							mileage={item.mileage}
+						/>
+					</Link>
+				);
+			});
+		}
 		//console.log("this.props.carList.carList.lenght == 0", this.props.carList.carList.length);
 
 		if (this.props.carList.carList.length == 0)

@@ -326,7 +326,7 @@ namespace CarSale.Controllers
                             fileName = System.IO.Path.GetFileName(s);
                         }
                         var destFile = System.IO.Path.Combine(filePath, fileName + ".jpg");
-                        System.IO.File.Copy(s, destFile, true);
+                        System.IO.File.Move(s, destFile);
                         i++;
                     }
                 }

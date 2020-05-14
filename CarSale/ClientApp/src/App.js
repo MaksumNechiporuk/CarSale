@@ -33,7 +33,6 @@ function App() {
 				render={(props) => (
 					<Fragment>
 						<Header {...props} />
-
 					</Fragment>
 				)}
 			/>
@@ -67,7 +66,8 @@ function App() {
 				render={(props) => (
 					<CarList {...props} />
 				)}
-            />
+			/>
+
             <Route
                 path="/AdminPanel/filters"
                 exact
@@ -81,14 +81,13 @@ function App() {
             />
             <Route
                 path="/AdminPanel/inprogress"
-                exact
-                render={() => (
-                    <Fragment>
-                        <AdminPanel />
-                        <InProgress />
-                    </Fragment>
-
-                )}
+				exact render={(props) => (
+					<Fragment>
+					<AdminPanel {...props} />
+						<InProgress {...props} />
+					</Fragment>
+					)}
+              
             />
 			<Route
 				path="/CarPost/:id"
@@ -97,7 +96,6 @@ function App() {
 					<CarPost {...props} />
 				)}
             />
-			/>	
 			<Route
 				path="/AdvancedSearch"
 				exact
@@ -112,6 +110,16 @@ function App() {
 					<AddCar {...props} />
 				)}
 			/>	
+			<Route
+				path="/"
+
+				render={(props) => (
+					<Fragment>
+						
+						<Footer />
+					</Fragment>
+				)}
+			/>
 		</Fragment>
 	);
 }

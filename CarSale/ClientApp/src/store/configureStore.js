@@ -5,23 +5,18 @@ import * as Counter from './Counter';
 import * as WeatherForecasts from './WeatherForecasts';
 import * as CarList from './CarList';
 import * as UserStore from './UserStore';
-
-export default function configureStore (history, initialState) {
-  const reducers = {
-    counter: Counter.reducer,
-    weatherForecasts: WeatherForecasts.reducer,
-      carList: CarList.reducer,
-      UserStore: UserStore.reducer
-  };
-
 import * as Filters from './Filters';
+
+
+
 
 export default function configureStore(history, initialState) {
 	const reducers = {
 		counter: Counter.reducer,
 		weatherForecasts: WeatherForecasts.reducer,
 		carList: CarList.reducer,
-		filters: Filters.reducer
+		filters: Filters.reducer,
+		UserStore: UserStore.reducer
 	};
 
 
