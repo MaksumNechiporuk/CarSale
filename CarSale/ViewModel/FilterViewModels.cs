@@ -65,6 +65,17 @@ namespace CarSale.ViewModels
         public List<FValueViewModel> Children { get; set; }
     }
 
+    public class FilterAddViewModel
+    {
+
+
+        public string Name { get; set; }
+
+
+
+        public List<string> values { get; set; }
+    }
+
 
     public class FilterVM
     {

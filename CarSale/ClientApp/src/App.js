@@ -12,10 +12,14 @@ import CarList from "./components/CarList/CarList"
 import About from "./components/About/About"
 import EditProfile from "./components/Profile/EditProfile/EditProfile"
 import ShowProfile from "./components/Profile/ShowProfile/ShowProfile"
-import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch"
-import CarPost from "./components/CarList/CarItem/CarPost/CarPost"
 import NotFound from "./components/NotFound/NotFound"
+import CarPost from "./components/CarList/CarItem/CarPost/CarPost"
+import AdminPanel from "./components/AdminPanel/AdminPanel"
+import Filters from "./components/AdminPanel/Filters/Filters"
+import InProgress from "./components/AdminPanel/InProgress/InProgress"
+import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch"
 import AddCar from './components/AddCar/AddCar';
+
 function App() {
 	return (
 		<Fragment>
@@ -45,13 +49,36 @@ function App() {
 				render={(props) => (
 					<CarList {...props} />
 				)}
-			/>
+            />
+            <Route
+                path="/AdminPanel/filters"
+                exact
+                render={() => (
+                    <Fragment>
+                        <AdminPanel />
+                        <Filters />
+                    </Fragment>
+
+                )}
+            />
+            <Route
+                path="/AdminPanel/inprogress"
+                exact
+                render={() => (
+                    <Fragment>
+                        <AdminPanel />
+                        <InProgress />
+                    </Fragment>
+
+                )}
+            />
 			<Route
 				path="/CarPost/:id"
 				exact
 				render={(props) => (
 					<CarPost {...props} />
 				)}
+
 			/>	
 			<Route
 				path="/AdvancedSearch"
