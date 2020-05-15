@@ -66,7 +66,7 @@ export const actionCreators = {
 	},
 	AddNewCar: (model) => async (dispatch) => {
 		const url = `api/Car/CreateNewCar`;
-		//  , filters: filters, makeId: makeId, modelId: modelId
+		console.log(url);
 
 
 		await axios

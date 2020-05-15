@@ -136,10 +136,9 @@ class AddCar extends Component {
 			Filters: filters, MakeId:  this.state.make[0], ModelId: this.state.model[0]
 		}
 		console.log(new_car);
-		async () => {
-		await	this.props.AddNewCar(new_car);
+	this.props.AddNewCar(new_car);
 
-		}
+
 		let path = `/`; this.props.history.push(path);
 	};
 
