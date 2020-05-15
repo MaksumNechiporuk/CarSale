@@ -22,7 +22,7 @@ pipeline  {
         stage("docker login") {
             steps {
                 echo " ============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentialss', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '''
                     docker login -u $USERNAME -p $PASSWORD
                     '''
@@ -33,7 +33,7 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push  maxnechiporuk/react-contact-list:latest
+                docker push  maxnechiporuk/carsale:latest
                 '''
             }
         }
