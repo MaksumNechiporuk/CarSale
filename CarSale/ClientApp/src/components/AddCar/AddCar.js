@@ -10,7 +10,6 @@ import { Button } from 'primereact/button';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import YearPicker from "react-year-picker";
 import AddImage from "./AddImage/AddImage"
-import uuid from "react-uuid";
 
 class AddCar extends Component {
 	constructor(props) {
@@ -38,7 +37,12 @@ class AddCar extends Component {
 		});
 	}
 
-
+	  createUUID() {
+   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+   });
+}
 	componentDidMount() {
 		this.ensureDataFetched();
 		//if (this.props.filters)
@@ -130,9 +134,10 @@ class AddCar extends Component {
 			})
 		console.log(filters);
 		let { mileage, Price, year } = this.state;
-
+		let UniqueName = this.createUUID();
+		console.log("UniqueName:", UniqueName);
 		let new_car = {
-			Date: year.toString(), UniqueName: uuid(), Name: "", Price: Price, Mileage: mileage,
+			Date: year.toString(), UniqueName: this.createUUID(), Name: "", Price: Price, Mileage: mileage,
 			Filters: filters, MakeId:  this.state.make[0], ModelId: this.state.model[0]
 		}
 		console.log(new_car);
