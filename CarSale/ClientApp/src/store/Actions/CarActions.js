@@ -73,9 +73,7 @@ export const actionCreators = {
 			.post(url, model)
 			.then(response =>
 				response.data);
-			dispatch({ type: "CarsByFilter" });
-
-		return;
+				return;
 
 	},
 

@@ -20,23 +20,23 @@ class CarListStart extends Component {
 	render() {
 		let singleItem = null;
 		if (this.props.carList.carList)
-			singleItem= this.props.carList.carList.map(item => {
-			let path = "/CarPost/" + item.id;
-			return (
-				<Link to={path} key={item.id} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
-					<CarItem
-						id={item.id}
-						
-						name={item.name}
-						state={item.state}
-						year={item.date}
-						img={item.image}
-						price={item.price}
-						mileage={item.mileage}
-					/>
-				</Link>
-			);
-		});
+			singleItem = this.props.carList.carList.map(item => {
+				let path = "/CarPost/" + item.id;
+				return (
+					<Link to={path} key={item.id} className="unlinkCar col-xl-4 col-sm-12 col-md-6">
+						<CarItem
+							id={item.id}
+
+							name={item.name}
+							state={item.state}
+							year={item.date}
+							img={item.image}
+							price={item.price}
+							mileage={item.mileage}
+						/>
+					</Link>
+				);
+			});
 		return (
 			<div className="listCar">
 				<div className="container">

@@ -54,7 +54,7 @@ class CarList extends Component {
 	render() {
 		let { totalPage } = this.props.carList;
 		let { loading, currentPage } = this.state;
-		let singleItem=null;
+		let singleItem = null;
 		if (this.props.carList.carList) {
 			singleItem = this.props.carList.carList.map(item => {
 				let path = "/CarPost/" + item.id;
@@ -75,39 +75,39 @@ class CarList extends Component {
 			});
 		}
 		//console.log("this.props.carList.carList.lenght == 0", this.props.carList.carList.length);
-
-		if (this.props.carList.carList.length == 0)
-			console.log("this.props.carList.carList.lenght == 0");
+		if (this.props.carList.carList)
+			if (this.props.carList.carList.length == 0)
+				console.log("this.props.carList.carList.lenght == 0");
 		return (
 			this.props.carList.carList.length == 0 ? <h2 className="NotFoundCar">Car Could Not Be Found!</h2> :
-		
-			loading ? <div className="d-flex "> <ProgressSpinner /></div> :
 
-				<Fragment>
-					<div className="listCar">
-						<div className="container">
+				loading ? <div className="d-flex "> <ProgressSpinner /></div> :
 
-							<div className="row" ref={this.myRef} id="ads">
-								{singleItem}
+					<Fragment>
+						<div className="listCar">
+							<div className="container">
+
+								<div className="row" ref={this.myRef} id="ads">
+									{singleItem}
+								</div>
 							</div>
 						</div>
-					</div>
-					<div className="container" >
-						<ReactPaginate
-							forcePage={this.props.match.params.page - 1}
-							previousLabel={"<<"}
-							nextLabel={">>"}
-							breakLabel={"..."}
-							breakClassName={"break-me"}
-							pageCount={totalPage}
-							marginPagesDisplayed={3}
-							pageRangeDisplayed={3}
-							onPageChange={this.handleChange}
-							containerClassName={"pagination "}
-							subContainerClassName={"pages"}
-							activeClassName={"current"} />
-					</div>
-				</Fragment >
+						<div className="container" >
+							<ReactPaginate
+								forcePage={this.props.match.params.page - 1}
+								previousLabel={"<<"}
+								nextLabel={">>"}
+								breakLabel={"..."}
+								breakClassName={"break-me"}
+								pageCount={totalPage}
+								marginPagesDisplayed={3}
+								pageRangeDisplayed={3}
+								onPageChange={this.handleChange}
+								containerClassName={"pagination "}
+								subContainerClassName={"pages"}
+								activeClassName={"current"} />
+						</div>
+					</Fragment >
 		);
 	}
 }
