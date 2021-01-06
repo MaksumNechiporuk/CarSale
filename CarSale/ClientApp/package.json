@@ -7,7 +7,7 @@
     "@material-ui/lab": "^4.0.0-alpha.51",
     "@syncfusion/ej2-react-dropdowns": "^18.1.52",
     "@types/classnames": "^2.2.10",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "jquery": "^3.5.0",
